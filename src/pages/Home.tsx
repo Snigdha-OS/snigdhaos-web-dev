@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Shield, Settings, Activity } from 'lucide-react';
+import { ArrowRight, Shield, Settings, Activity, Cpu, Cloud, Code, Users } from 'lucide-react';
 import ImageSlider from '../components/home/ImageSlider';
 import PenTestTools from '../components/home/PenTestTools';
 
@@ -31,6 +31,44 @@ export default function Home() {
               <Activity className="mx-auto mb-4 h-20 w-20 text-[#754ffe]" />
               <h3 className="text-xl font-semibold mb-2">Lightweight Design</h3>
               <p className="text-gray-600">Optimized for performance on both modern and older hardware.</p>
+            </div>
+          </div>
+
+          {/* New Reasons */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div className="text-center">
+              <Cpu className="mx-auto mb-4 h-20 w-20 text-[#754ffe]" />
+              <h3 className="text-xl font-semibold mb-2">High Performance</h3>
+              <p className="text-gray-600">Snigdha OS delivers blazing-fast performance, even on low-end hardware.</p>
+            </div>
+            <div className="text-center">
+              <Cloud className="mx-auto mb-4 h-20 w-20 text-[#754ffe]" />
+              <h3 className="text-xl font-semibold mb-2">Cloud Integration</h3>
+              <p className="text-gray-600">Easily integrates with popular cloud services for streamlined workflows.</p>
+            </div>
+            <div className="text-center">
+              <Code className="mx-auto mb-4 h-20 w-20 text-[#754ffe]" />
+              <h3 className="text-xl font-semibold mb-2">Developer Friendly</h3>
+              <p className="text-gray-600">Packed with all the tools you need for development and penetration testing.</p>
+            </div>
+          </div>
+
+          {/* Additional Reasons */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+            <div className="text-center">
+              <Users className="mx-auto mb-4 h-20 w-20 text-[#754ffe]" />
+              <h3 className="text-xl font-semibold mb-2">Community Support</h3>
+              <p className="text-gray-600">Join a vibrant community of users, contributors, and experts.</p>
+            </div>
+            <div className="text-center">
+              <Shield className="mx-auto mb-4 h-20 w-20 text-[#754ffe]" />
+              <h3 className="text-xl font-semibold mb-2">Regular Updates</h3>
+              <p className="text-gray-600">Snigdha OS is frequently updated to ensure security and performance are up to date.</p>
+            </div>
+            <div className="text-center">
+              <Settings className="mx-auto mb-4 h-20 w-20 text-[#754ffe]" />
+              <h3 className="text-xl font-semibold mb-2">Open Source</h3>
+              <p className="text-gray-600">Freely available for modification and redistribution, with a strong open-source community backing.</p>
             </div>
           </div>
         </div>
