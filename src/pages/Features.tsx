@@ -1,5 +1,5 @@
 import React from 'react';
-import { Terminal, Lock, Cpu, Cloud, Database, Shield } from 'lucide-react';
+import { Terminal, Lock, Cpu, Cloud, Database, Shield, Wifi, Laptop } from 'lucide-react';
 
 export default function Features() {
   const features = [
@@ -32,6 +32,74 @@ export default function Features() {
       icon: <Shield className="h-8 w-8" />,
       title: "Enterprise Ready",
       description: "Suitable for both individual and enterprise-level security testing."
+    },
+    {
+      icon: <Wifi className="h-8 w-8" />,
+      title: "Wireless Security",
+      description: "Equipped with tools for wireless network auditing and penetration testing."
+    },
+    {
+      icon: <Laptop className="h-8 w-8" />,
+      title: "Portable and Lightweight",
+      description: "Run Snigdha OS on a USB drive for portability without leaving traces on devices."
+    }
+  ];
+
+  const toolCategories = [
+    {
+      title: "Information Gathering",
+      tools: [
+        "Network scanning and enumeration",
+        "OSINT tools",
+        "DNS analysis",
+        "Web reconnaissance",
+        "Social media analysis"
+      ]
+    },
+    {
+      title: "Vulnerability Analysis",
+      tools: [
+        "Automated scanning tools",
+        "Database assessment",
+        "Cisco tools",
+        "Fuzzing tools",
+        "Web app vulnerability scanning"
+      ]
+    },
+    {
+      title: "Exploitation Tools",
+      tools: [
+        "Metasploit Framework",
+        "Buffer Overflow exploitation",
+        "SQL injection tools",
+        "Social Engineering tools"
+      ]
+    },
+    {
+      title: "Post-Exploitation",
+      tools: [
+        "Privilege escalation",
+        "Persistence",
+        "Data exfiltration",
+        "Forensics tools"
+      ]
+    },
+    {
+      title: "Wireless Attacks",
+      tools: [
+        "WiFi cracking tools",
+        "Aircrack-ng suite",
+        "WEP/WPA/WPA2 attacks",
+        "Bluetooth hacking"
+      ]
+    },
+    {
+      title: "Reverse Engineering",
+      tools: [
+        "Disassemblers",
+        "Debuggers",
+        "Binary analysis tools"
+      ]
     }
   ];
 
@@ -42,7 +110,7 @@ export default function Features() {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Features</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover the powerful features that make Kali Linux the premier platform for security testing.
+            Discover the powerful features that make Snigdha OS the premier platform for security testing.
           </p>
         </div>
 
@@ -59,30 +127,23 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Tools Categories */}
+        {/* Tool Categories Section */}
         <div className="mt-20">
           <h2 className="text-3xl font-bold text-center mb-12">Tool Categories</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-[#754ffe]">Information Gathering</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Network scanning and enumeration</li>
-                <li>• OSINT tools</li>
-                <li>• DNS analysis</li>
-                <li>• Web reconnaissance</li>
-              </ul>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-[#754ffe]">Vulnerability Analysis</h3>
-              <ul className="space-y-2 text-gray-600">
-                <li>• Automated scanning tools</li>
-                <li>• Database assessment</li>
-                <li>• Cisco tools</li>
-                <li>• Fuzzing tools</li>
-              </ul>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {toolCategories.map((category, index) => (
+              <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
+                <h3 className="text-xl font-semibold mb-4 text-[#754ffe]">{category.title}</h3>
+                <ul className="space-y-2 text-gray-600">
+                  {category.tools.map((tool, i) => (
+                    <li key={i}>• {tool}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
+
       </div>
     </div>
   );

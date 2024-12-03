@@ -79,23 +79,75 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold mb-12">What Our Users Say</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            {/* Testimonial 1 */}
+            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="flex justify-center mb-4">
+                <img
+                  className="w-16 h-16 rounded-full border-2 border-gray-300"
+                  src="https://avatars.githubusercontent.com/u/118294498?v=4" // Example GitHub Profile Image
+                  alt="akankshaadz"
+                />
+              </div>
               <p className="text-gray-600 italic mb-4">
                 "Snigdha OS has revolutionized how I approach cybersecurity tasks. The built-in tools are fantastic!"
               </p>
-              <h4 className="font-semibold text-lg">- Alex J.</h4>
+              <h4 className="font-semibold text-lg">- akankshaadz</h4>
             </div>
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            {/* Testimonial 2 */}
+            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="flex justify-center mb-4">
+                <img
+                  className="w-16 h-16 rounded-full border-2 border-gray-300"
+                  src="https://avatars.githubusercontent.com/u/7654321?v=4" // Example GitHub Profile Image
+                  alt="Prajwal K."
+                />
+              </div>
               <p className="text-gray-600 italic mb-4">
                 "A game-changer for developers and penetration testers. Highly recommend!"
               </p>
-              <h4 className="font-semibold text-lg">- Priya K.</h4>
+              <h4 className="font-semibold text-lg">- Prajwal K.</h4>
             </div>
-            <div className="bg-white shadow-lg rounded-lg p-6">
+            {/* Testimonial 3 */}
+            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="flex justify-center mb-4">
+                <img
+                  className="w-16 h-16 rounded-full border-2 border-gray-300"
+                  src="https://avatars.githubusercontent.com/u/1122334?v=4" // Example GitHub Profile Image
+                  alt="Mark L."
+                />
+              </div>
               <p className="text-gray-600 italic mb-4">
                 "Runs seamlessly on my older laptop. The lightweight design is truly impressive."
               </p>
               <h4 className="font-semibold text-lg">- Mark L.</h4>
+            </div>
+            {/* Testimonial 4 */}
+            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="flex justify-center mb-4">
+                <img
+                  className="w-16 h-16 rounded-full border-2 border-gray-300"
+                  src="https://avatars.githubusercontent.com/u/3412345?v=4" // Example GitHub Profile Image
+                  alt="Samantha R."
+                />
+              </div>
+              <p className="text-gray-600 italic mb-4">
+                "I love how Snigdha OS is always up-to-date with the latest tools. It's incredibly easy to use."
+              </p>
+              <h4 className="font-semibold text-lg">- Samantha R.</h4>
+            </div>
+            {/* Testimonial 5 */}
+            <div className="bg-white shadow-lg rounded-lg p-6 text-center">
+              <div className="flex justify-center mb-4">
+                <img
+                  className="w-16 h-16 rounded-full border-2 border-gray-300"
+                  src="https://avatars.githubusercontent.com/u/7892345?v=4" // Example GitHub Profile Image
+                  alt="John D."
+                />
+              </div>
+              <p className="text-gray-600 italic mb-4">
+                "Snigdha OS is an absolute powerhouse! It’s exactly what I needed for my penetration testing tasks."
+              </p>
+              <h4 className="font-semibold text-lg">- John D.</h4>
             </div>
           </div>
         </div>
