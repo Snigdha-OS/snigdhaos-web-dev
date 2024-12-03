@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { Menu, X, Terminal } from 'lucide-react';
+import { FaGithub, FaDev } from 'react-icons/fa';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -16,7 +17,7 @@ export default function Navbar() {
   return (
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+        <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <NavLink to="/" className="flex items-center">
               <Terminal className="h-8 w-8 text-[#754ffe]" />
@@ -29,13 +30,33 @@ export default function Navbar() {
               <NavLink
                 key={path}
                 to={path}
-                className={({isActive}) => 
+                className={({ isActive }) => 
                   `${isActive ? 'text-[#754ffe]' : 'text-gray-700'} hover:text-[#754ffe] transition-colors`
                 }
               >
                 {label}
               </NavLink>
             ))}
+          </div>
+
+          {/* Social Media Icons */}
+          <div className="hidden md:flex items-center space-x-6 ml-6">
+            <a
+              href="https://github.com/Snigdha-OS"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-[#754ffe] transition-colors"
+            >
+              <FaGithub className="h-6 w-6" />
+            </a>
+            <a
+              href="https://dev.to/snigdhaos"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-[#754ffe] transition-colors"
+            >
+              <FaDev className="h-6 w-6" />
+            </a>
           </div>
 
           <div className="md:hidden flex items-center">

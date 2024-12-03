@@ -7,6 +7,8 @@ import About from './pages/About';
 import Features from './pages/Features';
 import Download from './pages/Download';
 import Developers from './pages/Developers';
+import PrivacyPolicy from './pages/PrivacyPolicy'; // Import the PrivacyPolicy page
+import CookieNotice from './components/CookieNotice'; // Cookie Notice
 
 function App() {
   return (
@@ -20,8 +22,10 @@ function App() {
             <Route path="/features" element={<Features />} />
             <Route path="/download" element={<Download />} />
             <Route path="/developers" element={<Developers />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* Privacy Policy Route */}
           </Routes>
         </main>
+        <CookieNotice />
         <Footer />
       </div>
     </Router>
