@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
@@ -10,40 +10,40 @@ const slides = [
   },
   {
     type: 'image',
-    url: "https://images.unsplash.com/photo-1516314175872-b4fe7fe63f55?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8Mnx8c3lzdGVtcyUyMGF0JTIwd29yayxlbnwwfHx8fDE2NzgzNjI4NzY&ixlib=rb-1.2.1&q=80&w=1080",
+    url: "https://images.pexels.com/photos/5380792/pexels-photo-5380792.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
     title: "Firewalls",
     description: "Secure your network with advanced firewall protection."
   },
   {
     type: 'image',
-    url: "https://images.unsplash.com/photo-1584697964178-70f5289cbbd1?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8OXx8c3lzdGVtcyUyMGFuZCUyMHNlY3VyaXR5fGVufDB8fHx8fDE2NzgzNjM0NjQ&ixlib=rb-1.2.1&q=80&w=1080",
+    url: "https://images.pexels.com/photos/14066351/pexels-photo-14066351.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Malware Detection",
     description: "Detect and mitigate malware threats with sophisticated tools."
-  },
-  {
-    type: 'image',
-    url: "https://images.unsplash.com/photo-1584697964178-70f5289cbbd1?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8OXx8c3lzdGVtcyUyMGFuZCUyMHNlY3VyaXR5fGVufDB8fHx8fDE2NzgzNjM0NjQ&ixlib=rb-1.2.1&q=80&w=1080",
-    title: "Cybersecurity Awareness",
-    description: "Stay informed about the latest cybersecurity trends and threats."
-  },
-  {
-    type: 'image',
-    url: "https://images.unsplash.com/photo-1584697964178-70f5289cbbd1?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8OXx8c3lzdGVtcyUyMGFuZCUyMHNlY3VyaXR5fGVufDB8fHx8fDE2NzgzNjM0NjQ&ixlib=rb-1.2.1&q=80&w=1080",
-    title: "Advanced Threat Protection",
-    description: "Protect your systems with advanced threat protection tools."
-  },
-  {
-    type: 'image',
-    url: "https://images.unsplash.com/photo-1590517286893-84f635b02cf0?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8MXx8cGFzc3dvcmQlMjBmb3IlMjBjdXJlcyxlbnwwfHx8fDE2NzgzNjM5Nzg&ixlib=rb-1.2.1&q=80&w=1080",
-    title: "Cybersecurity Policy",
-    description: "Establish robust cybersecurity policies for your organization."
-  },
-  {
-    type: 'image',
-    url: "https://images.unsplash.com/photo-1622736606985-5f6881a2ffb6?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8NXx8aXNtYWdlJTIwd2l0aCUyMHRlY2huaWNhbHxlbnwwfHx8fDE2NzgzNjQyNzg&ixlib=rb-1.2.1&q=80&w=1080",
-    title: "Cybersecurity Tools",
-    description: "Utilize the latest cybersecurity tools to keep your systems safe."
   }
+  // {
+  //   type: 'image',
+  //   url: "https://images.unsplash.com/photo-1584697964178-70f5289cbbd1?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8OXx8c3lzdGVtcyUyMGFuZCUyMHNlY3VyaXR5fGVufDB8fHx8fDE2NzgzNjM0NjQ&ixlib=rb-1.2.1&q=80&w=1080",
+  //   title: "Cybersecurity Awareness",
+  //   description: "Stay informed about the latest cybersecurity trends and threats."
+  // },
+  // {
+  //   type: 'image',
+  //   url: "https://images.unsplash.com/photo-1584697964178-70f5289cbbd1?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8OXx8c3lzdGVtcyUyMGFuZCUyMHNlY3VyaXR5fGVufDB8fHx8fDE2NzgzNjM0NjQ&ixlib=rb-1.2.1&q=80&w=1080",
+  //   title: "Advanced Threat Protection",
+  //   description: "Protect your systems with advanced threat protection tools."
+  // },
+  // {
+  //   type: 'image',
+  //   url: "https://images.unsplash.com/photo-1590517286893-84f635b02cf0?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8MXx8cGFzc3dvcmQlMjBmb3IlMjBjdXJlcyxlbnwwfHx8fDE2NzgzNjM5Nzg&ixlib=rb-1.2.1&q=80&w=1080",
+  //   title: "Cybersecurity Policy",
+  //   description: "Establish robust cybersecurity policies for your organization."
+  // },
+  // {
+  //   type: 'image',
+  //   url: "https://images.unsplash.com/photo-1622736606985-5f6881a2ffb6?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8NXx8aXNtYWdlJTIwd2l0aCUyMHRlY2huaWNhbHxlbnwwfHx8fDE2NzgzNjQyNzg&ixlib=rb-1.2.1&q=80&w=1080",
+  //   title: "Cybersecurity Tools",
+  //   description: "Utilize the latest cybersecurity tools to keep your systems safe."
+  // }
 ];
 
 export default function ImageSlider() {

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Shield, Users, Globe, Package, Laptop, Star } from 'lucide-react';
 
 export default function About() {

@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Download, Laptop, HardDrive, Cloud, Archive, Server, Box } from 'lucide-react';
 
 export default function DownloadPage() {

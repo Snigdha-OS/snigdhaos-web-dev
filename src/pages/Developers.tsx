@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Code, GitBranch, Users, MessageSquare } from 'lucide-react';
 
 // Define the type for a developer's GitHub data

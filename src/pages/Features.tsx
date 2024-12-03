@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { Terminal, Lock, Cpu, Cloud, Database, Shield, Wifi, Laptop } from 'lucide-react';
 
 export default function Features() {
