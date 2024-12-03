@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 const slides = [
   {
     type: 'image',
-    url: "https://images.unsplash.com/photo-1600782910044-f02b543bb1c0?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8Mnx8Y3liZXJzZWN1cml0eXxlbnwwfHx8fDE2NzgzNjMwNzM&ixlib=rb-1.2.1&q=80&w=1080",
+    url: "https://images.pexels.com/photos/614117/pexels-photo-614117.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     title: "Data Encryption",
     description: "Protect sensitive information with strong encryption protocols."
   },
