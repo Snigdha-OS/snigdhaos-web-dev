@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { ArrowRight, Shield, Settings, Activity, Cpu, Cloud, Code, Users } from 'lucide-react';
 import ImageSlider from '../components/home/ImageSlider';
 import PenTestTools from '../components/home/PenTestTools';
