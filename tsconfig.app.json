@@ -18,7 +18,11 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Other options */
+    "esModuleInterop": true,  // Optional but recommended
+    "types": ["react", "react-dom"] // Ensure React types are included
   },
   "include": ["src"]
 }

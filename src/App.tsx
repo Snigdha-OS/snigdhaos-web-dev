@@ -22,7 +22,7 @@ function App() {
             <Route path="/features" element={<Features />} />
             <Route path="/download" element={<Download />} />
             <Route path="/developers" element={<Developers />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} /> {/* Privacy Policy Route */}
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </main>
         <CookieNotice />
