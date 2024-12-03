@@ -3,22 +3,46 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const slides = [
   {
-    type: 'video',
-    url: "https://cdn.videvo.net/videvo_files/video/premium/video0036/small_watermarked/computer_code00_preview.mp4",
-    title: "Next-Gen Security",
-    description: "Experience advanced security features and protection"
+    type: 'image',
+    url: "https://images.unsplash.com/photo-1600782910044-f02b543bb1c0?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8Mnx8Y3liZXJzZWN1cml0eXxlbnwwfHx8fDE2NzgzNjMwNzM&ixlib=rb-1.2.1&q=80&w=1080",
+    title: "Data Encryption",
+    description: "Protect sensitive information with strong encryption protocols."
   },
   {
     type: 'image',
-    url: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=1920",
-    title: "Developer's Choice",
-    description: "Built for modern development workflows"
+    url: "https://images.unsplash.com/photo-1516314175872-b4fe7fe63f55?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8Mnx8c3lzdGVtcyUyMGF0JTIwd29yayxlbnwwfHx8fDE2NzgzNjI4NzY&ixlib=rb-1.2.1&q=80&w=1080",
+    title: "Firewalls",
+    description: "Secure your network with advanced firewall protection."
   },
   {
-    type: 'video',
-    url: "https://cdn.videvo.net/videvo_files/video/premium/video0036/small_watermarked/computer_code02_preview.mp4",
-    title: "Community Powered",
-    description: "Supported by a growing community of innovators"
+    type: 'image',
+    url: "https://images.unsplash.com/photo-1584697964178-70f5289cbbd1?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8OXx8c3lzdGVtcyUyMGFuZCUyMHNlY3VyaXR5fGVufDB8fHx8fDE2NzgzNjM0NjQ&ixlib=rb-1.2.1&q=80&w=1080",
+    title: "Malware Detection",
+    description: "Detect and mitigate malware threats with sophisticated tools."
+  },
+  {
+    type: 'image',
+    url: "https://images.unsplash.com/photo-1584697964178-70f5289cbbd1?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8OXx8c3lzdGVtcyUyMGFuZCUyMHNlY3VyaXR5fGVufDB8fHx8fDE2NzgzNjM0NjQ&ixlib=rb-1.2.1&q=80&w=1080",
+    title: "Cybersecurity Awareness",
+    description: "Stay informed about the latest cybersecurity trends and threats."
+  },
+  {
+    type: 'image',
+    url: "https://images.unsplash.com/photo-1584697964178-70f5289cbbd1?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8OXx8c3lzdGVtcyUyMGFuZCUyMHNlY3VyaXR5fGVufDB8fHx8fDE2NzgzNjM0NjQ&ixlib=rb-1.2.1&q=80&w=1080",
+    title: "Advanced Threat Protection",
+    description: "Protect your systems with advanced threat protection tools."
+  },
+  {
+    type: 'image',
+    url: "https://images.unsplash.com/photo-1590517286893-84f635b02cf0?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8MXx8cGFzc3dvcmQlMjBmb3IlMjBjdXJlcyxlbnwwfHx8fDE2NzgzNjM5Nzg&ixlib=rb-1.2.1&q=80&w=1080",
+    title: "Cybersecurity Policy",
+    description: "Establish robust cybersecurity policies for your organization."
+  },
+  {
+    type: 'image',
+    url: "https://images.unsplash.com/photo-1622736606985-5f6881a2ffb6?crop=entropy&cs=tinysrgb&fit=max&ixid=MnwzNjA3fDB8MHxwaG90by1mZWF0Y2h8NXx8aXNtYWdlJTIwd2l0aCUyMHRlY2huaWNhbHxlbnwwfHx8fDE2NzgzNjQyNzg&ixlib=rb-1.2.1&q=80&w=1080",
+    title: "Cybersecurity Tools",
+    description: "Utilize the latest cybersecurity tools to keep your systems safe."
   }
 ];
 
@@ -43,7 +67,7 @@ export default function ImageSlider() {
     if (isPlaying) {
       timer = setInterval(() => {
         nextSlide();
-      }, 8000); // Longer interval for videos
+      }, 2000); // Longer interval for videos
     }
     return () => clearInterval(timer);
   }, [currentIndex, isPlaying]);
@@ -75,7 +99,7 @@ export default function ImageSlider() {
   };
 
   return (
-    <div className="relative h-[600px] w-full group">
+    <div className="relative h-[735px] w-full group">
       <div className="w-full h-full bg-black relative overflow-hidden">
         {renderSlideContent()}
         <div className="absolute inset-0 bg-black/50 flex items-center justify-center flex-col text-white text-center px-4">
