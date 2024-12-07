@@ -20,7 +20,8 @@ export async function getMaintainers(): Promise<Maintainer[]> {
     'iconized',
     'alokified',
     'utkrshift',
-    // 'eshaanized'
+    'd3v1l0n',
+    'myself-meghna'
   ];
 
   const maintainers = await Promise.all(
