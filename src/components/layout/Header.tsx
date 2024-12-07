@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 export function Header() {
   const location = useLocation();
@@ -9,20 +9,30 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-[#3c3c3c] text-white">
-      <div className="container mx-auto px-4">
+    <header className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-2">
-            <img src="/mint-logo.svg" alt="Linux Mint" className="h-8 w-8" />
-            <span className="font-bold text-xl">SNIGDHA OS</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <img
+              src="/snigdhaos-logo.svg"
+              alt="Snigdha OS"
+              className="h-10 w-10 hover:scale-110 transition-transform"
+            />
+            <span className="font-extrabold text-2xl tracking-wide">
+              SNIGDHA OS
+            </span>
           </Link>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-700 transition-all"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <Menu className="h-6 w-6" />
+            {isMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
 
           {/* Desktop navigation */}
@@ -33,8 +43,8 @@ export function Header() {
 
         {/* Mobile navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4">
-            <div className="flex flex-col space-y-4">
+          <nav className="md:hidden mt-4">
+            <div className="flex flex-col space-y-4 bg-gray-900 p-4 rounded-lg shadow-md">
               <NavLinks isActive={isActive} />
             </div>
           </nav>
@@ -47,46 +57,22 @@ export function Header() {
 function NavLinks({ isActive }: { isActive: (path: string) => boolean }) {
   return (
     <>
-      <Link
-        to="/"
-        className={`${
-          isActive('/') ? 'text-indigo-400' : 'hover:text-indigo-400'
-        } transition-colors`}
-      >
-        Home
-      </Link>
-      <Link
-        to="/about"
-        className={`${
-          isActive('/about') ? 'text-indigo-400' : 'hover:text-indigo-400'
-        } transition-colors`}
-      >
-        About
-      </Link>
-      <Link
-        to="/download"
-        className={`${
-          isActive('/download') ? 'text-indigo-400' : 'hover:text-indigo-400'
-        } transition-colors`}
-      >
-        Download
-      </Link>
-      <Link
-        to="/donors"
-        className={`${
-          isActive('/donors') ? 'text-indigo-400' : 'hover:text-indigo-400'
-        } transition-colors`}
-      >
-        Donors
-      </Link>
-      <Link
-        to="/maintainers"
-        className={`${
-          isActive('/maintainers') ? 'text-indigo-400' : 'hover:text-indigo-400'
-        } transition-colors`}
-      >
-        Maintainers
-      </Link>
+      {['/', '/about', '/download', '/donors', '/maintainers'].map((path, idx) => {
+        const labels = ['Home', 'About', 'Download', 'Donors', 'Maintainers'];
+        return (
+          <Link
+            key={path}
+            to={path}
+            className={`${
+              isActive(path)
+                ? 'text-indigo-400 underline underline-offset-4'
+                : 'hover:text-indigo-400'
+            } font-medium transition-colors`}
+          >
+            {labels[idx]}
+          </Link>
+        );
+      })}
     </>
   );
 }

@@ -16,11 +16,11 @@ export interface Maintainer {
 
 export async function getMaintainers(): Promise<Maintainer[]> {
   const maintainerUsernames = [
-    'ClementLefebvre',
-    'mtwebster',
-    'JosephMills',
-    'leigh123linux',
-    'xenopeek'
+    'eshanized',
+    'iconized',
+    'alokified',
+    'utkrshift',
+    // 'eshaanized'
   ];
 
   const maintainers = await Promise.all(
