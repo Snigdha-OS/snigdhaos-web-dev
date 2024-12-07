@@ -6,84 +6,114 @@ export function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Welcome to Snigdha OS</h1>
-          <p className="text-xl mb-8">Arch based Linux Distribution for Penetration Testing and Ethical Hacking</p>
-          <div className="flex justify-center space-x-4">
-          <Link
-            to="/download"
-            className="bg-white text-indigo-700 px-8 py-3 rounded-[5px] font-semibold hover:bg-gray-100 transition-colors inline-flex items-center space-x-2"
-          >
-          <Download className="h-5 w-5" /> {/* Icon */}
-          <span>Download Now</span>
-            </Link>
+<section className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white py-20 relative overflow-hidden">
+  {/* Background Image */}
+  <div className="absolute inset-0 -z-10">
+    <img
+      src="https://via.placeholder.com/1920x1080" // Replace with your desired background image URL
+      alt="Background"
+      className="w-full h-full object-cover opacity-30"
+    />
+  </div>
 
-            <Link
-  to="/about"
-  className="border-2 border-white text-white px-8 py-3 rounded-[5px] font-semibold hover:bg-white hover:text-indigo-700 transition-colors inline-flex items-center space-x-2"
->
-  <ArrowRight className="h-5 w-5" /> {/* Icon */}
-  <span>Learn More</span>
-</Link>
+  <div className="container mx-auto px-4 text-center relative z-10">
+    <h1 className="text-5xl font-extrabold mb-6 text-shadow-md">
+      Welcome to Snigdha OS
+    </h1>
+    <p className="text-xl mb-8 max-w-3xl mx-auto text-shadow-lg">
+      Arch-based Linux Distribution for Penetration Testing and Ethical Hacking.
+      Snigdha OS provides a powerful platform with the latest tools for cybersecurity professionals.
+    </p>
+    <div className="flex justify-center space-x-6 mt-6">
+      <Link
+        to="/download"
+        className="bg-white text-indigo-700 px-8 py-4 rounded-[5px] font-semibold shadow-lg transform hover:scale-105 hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-3"
+      >
+        <Download className="h-5 w-5" />
+        <span>Download Now</span>
+      </Link>
 
-          </div>
-        </div>
-      </section>
+      <Link
+        to="/about"
+        className="border-2 border-white text-white px-8 py-4 rounded-[5px] font-semibold transform hover:scale-105 hover:bg-white hover:text-indigo-700 transition-all duration-300 inline-flex items-center space-x-3"
+      >
+        <ArrowRight className="h-5 w-5" />
+        <span>Learn More</span>
+      </Link>
+    </div>
+
+    {/* Additional Call-to-Action */}
+    <div className="mt-12 max-w-2xl mx-auto">
+      <p className="text-lg text-white opacity-80 mb-4">
+        Join a community of like-minded individuals dedicated to enhancing the security and safety of the digital world. Explore our open-source ecosystem and contribute to the next-gen tools.
+      </p>
+      <Link
+        to="/community"
+        className="border-2 border-white text-white px-8 py-4 rounded-[5px] font-semibold transform hover:scale-105 hover:bg-white hover:text-indigo-700 transition-all duration-300 inline-flex items-center space-x-3"
+      >
+        <Users className="h-5 w-5" />
+        <span>Join Our Community</span>
+      </Link>
+    </div>
+  </div>
+</section>
 
       {/* Features Section */}
-      <section className="py-16 bg-white">
+<section className="py-16 bg-gradient-to-r from-indigo-50 to-white">
   <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold text-center mb-12">Key Features</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <h2 className="text-4xl font-extrabold text-center text-indigo-700 mb-12 tracking-tight">
+      Key Features
+    </h2>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
       <FeatureCard
-        icon={<Shield className="h-12 w-12 text-indigo-600" />}
+        icon={<Shield className="h-16 w-16 text-red-500" />}
         title="Secure"
         description="Regular security updates and a robust system architecture keep your data safe."
       />
       <FeatureCard
-        icon={<Terminal className="h-12 w-12 text-indigo-600" />}
+        icon={<Terminal className="h-16 w-16 text-green-500" />}
         title="Powerful"
         description="Full access to the terminal and system components for advanced users."
       />
       <FeatureCard
-        icon={<Download className="h-12 w-12 text-indigo-600" />}
+        icon={<Download className="h-16 w-16 text-blue-500" />}
         title="Free Forever"
-        description="Linux Mint is free and open source. No costs, no subscriptions."
+        description="Snigdha OS is free and open source. No costs, no subscriptions."
       />
       <FeatureCard
-        icon={<Award className="h-12 w-12 text-indigo-600" />}
+        icon={<Award className="h-16 w-16 text-yellow-500" />}
         title="Customizable"
         description="Personalize your desktop environment to suit your needs and style."
       />
       <FeatureCard
-        icon={<Users className="h-12 w-12 text-indigo-600" />}
+        icon={<Users className="h-16 w-16 text-pink-500" />}
         title="Community Support"
         description="A vibrant community ready to help and share knowledge."
       />
       <FeatureCard
-        icon={<Star className="h-12 w-12 text-indigo-600" />}
+        icon={<Star className="h-16 w-16 text-indigo-500" />}
         title="Feature Rich"
         description="Pre-installed applications and tools for everyday use."
       />
       <FeatureCard
-        icon={<Coffee className="h-12 w-12 text-indigo-600" />}
+        icon={<Coffee className="h-16 w-16 text-brown-500" />}
         title="Energy Efficient"
         description="Optimized performance to save energy and enhance hardware longevity."
       />
       <FeatureCard
-        icon={<ArrowRight className="h-12 w-12 text-indigo-600" />}
+        icon={<ArrowRight className="h-16 w-16 text-teal-500" />}
         title="Fast Boot"
         description="Experience faster boot times and smooth transitions."
       />
       <FeatureCard
-        icon={<Terminal className="h-12 w-12 text-indigo-600" />}
+        icon={<Terminal className="h-16 w-16 text-purple-500" />}
         title="Advanced Tools"
         description="Access specialized penetration testing and ethical hacking tools."
       />
     </div>
   </div>
 </section>
+
 
 
       {/* Latest Release Section */}
@@ -96,14 +126,14 @@ export function Home() {
         <div className="md:w-1/2 mb-8 md:mb-0">
           <img
             src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-            alt="Linux Mint Desktop"
+            alt="Snigdha OS Desktop"
             className="rounded-lg shadow-md"
           />
         </div>
 
         {/* Details Section */}
         <div className="md:w-1/2 md:pl-8">
-          <h3 className="text-2xl font-bold mb-4">Linux Mint 21.3</h3>
+          <h3 className="text-2xl font-regular mb-4">Snigdha OS | <b>Arctic V</b></h3>
           <p className="text-gray-600 mb-6">
             Experience the latest features and improvements in our newest release. 
             Enjoy enhanced performance, better hardware support, and a refined user interface.
@@ -112,7 +142,7 @@ export function Home() {
           <div className="space-y-6">
             {/* Key Features */}
             <Feature
-              title="New Cinnamon 6.0"
+              title="New Gnome 47.0"
               description="Enjoy a faster and more responsive desktop environment with redesigned animations and improved task handling."
             />
             <Feature
@@ -125,7 +155,7 @@ export function Home() {
             />
             <Feature
               title="Upgraded Kernel and Drivers"
-              description="Leverage the power of the Linux 6.x kernel for optimal system performance."
+              description="Leverage the power of the Linux 6.x Zen kernel for optimal system performance."
             />
             <Feature
               title="System Snapshots with Timeshift"
@@ -138,10 +168,10 @@ export function Home() {
           </div>
 
           {/* Buttons */}
-          <div className="flex mt-6 space-x-4">
+          <div className="flex mt-6 justify-center space-x-4">
             <Link
               to="/download"
-              className="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-2 rounded-[5px] hover:bg-indigo-700 transition-colors"
+              className="inline-flex items-center space-x-3 bg-indigo-600 text-white px-8 py-4 rounded-[5px] hover:bg-indigo-700 transition-colors"
             >
               <span>Download Now</span>
               <ArrowRight className="h-4 w-4" />
@@ -161,15 +191,15 @@ export function Home() {
 </section>
 
 
-{/* Why Choose Linux Mint */}
+{/* Why Choose Snigdha OS */}
 <section className="py-16 bg-white">
   <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold text-center mb-12">Why Choose Linux Mint?</h2>
+    <h2 className="text-3xl font-bold text-center mb-12">Why Choose Snigdha OS?</h2>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       <ReasonCard
         icon={<Award className="h-10 w-10 text-yellow-500" />}
         title="User-Friendly"
-        description="With its intuitive interface, Linux Mint provides a seamless experience for beginners and experts alike."
+        description="With its intuitive interface, Snigdha OS provides a seamless experience for beginners and experts alike."
       />
       <ReasonCard
         icon={<Users className="h-10 w-10 text-blue-500" />}
@@ -179,7 +209,7 @@ export function Home() {
       <ReasonCard
         icon={<Coffee className="h-10 w-10 text-red-500" />}
         title="Stable & Reliable"
-        description="Built on Ubuntu's LTS base, Linux Mint ensures long-term stability and security updates."
+        description="Built on Ubuntu's LTS base, Snigdha OS ensures long-term stability and security updates."
       />
       <ReasonCard
         icon={<Star className="h-10 w-10 text-purple-500" />}
@@ -189,7 +219,7 @@ export function Home() {
       <ReasonCard
         icon={<Shield className="h-10 w-10 text-green-500" />}
         title="Privacy Focused"
-        description="Unlike many OS options, Linux Mint respects your privacy with no data tracking or telemetry."
+        description="Unlike many OS options, Snigdha OS respects your privacy with no data tracking or telemetry."
       />
       <ReasonCard
         icon={<Terminal className="h-10 w-10 text-indigo-500" />}
@@ -199,7 +229,7 @@ export function Home() {
       <ReasonCard
         icon={<Download className="h-10 w-10 text-orange-500" />}
         title="Free and Open Source"
-        description="Linux Mint is free forever, with its source code available for transparency and community-driven improvements."
+        description="Snigdha OS is free forever, with its source code available for transparency and community-driven improvements."
       />
       <ReasonCard
         icon={<ArrowRight className="h-10 w-10 text-teal-500" />}
@@ -211,22 +241,23 @@ export function Home() {
 </section>
 
       {/* Community Stats */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <StatCard number="15M+" label="Downloads" />
-            <StatCard number="100+" label="Countries" />
-            <StatCard number="500K+" label="Active Users" />
-          </div>
-        </div>
-      </section>
+{/* <section className="py-16 bg-gradient-to-r from-indigo-50 to-indigo-100">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center text-indigo-800 mb-12">Join Our Growing Community</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <StatCard number="1K+" label="Downloads" />
+      <StatCard number="100+" label="Countries" />
+      <StatCard number="500K+" label="Active Users" />
+    </div>
+  </div>
+</section> */}
 
       {/* CTA Section */}
       <section className="py-16 bg-indigo-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Ready to Try Linux Mint?</h2>
+          <h2 className="text-3xl font-bold mb-6">Ready to Try Snigdha OS?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Join millions of users worldwide and experience the freedom of Linux Mint.
+            Join millions of users worldwide and experience the freedom of <br></br>Snigdha OS.
           </p>
           <Link
             to="/download"
@@ -251,10 +282,10 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
-      <div className="flex justify-center mb-4">{icon}</div>
-      <h3 className="text-xl font-bold mb-2">{title}</h3>
-      <p className="text-gray-600">{description}</p>
+    <div className="text-center p-8 bg-white rounded-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+      <div className="flex justify-center mb-6">{icon}</div>
+      <h3 className="text-2xl font-semibold text-indigo-700 mb-3">{title}</h3>
+      <p className="text-gray-600 text-lg">{description}</p>
     </div>
   );
 }
@@ -263,7 +294,7 @@ function Feature({ title, description }: { title: string; description: string })
   return (
     <div className="flex items-start space-x-3">
       <div className="flex-shrink-0">
-        <div className="w-2 h-2 mt-2 rounded-[5px] bg-green-500"></div>
+        <div className="w-2 h-2 mt-2 rounded-[5px] bg-indigo-500"></div>
       </div>
       <div>
         <h4 className="font-semibold">{title}</h4>
@@ -272,6 +303,7 @@ function Feature({ title, description }: { title: string; description: string })
     </div>
   );
 }
+
 
 function ReasonCard({
   icon,
@@ -291,11 +323,11 @@ function ReasonCard({
   );
 }
 
-function StatCard({ number, label }: { number: string; label: string }) {
+const StatCard = ({ number, label }: { number: string; label: string }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-      <div className="text-4xl font-bold text-indigo-600 mb-2">{number}</div>
-      <div className="text-gray-600">{label}</div>
+    <div className="bg-white rounded-lg shadow-xl transform hover:scale-105 transition-transform p-8 text-center">
+      <div className="text-5xl font-bold text-indigo-700 mb-4">{number}</div>
+      <p className="text-lg text-gray-600 font-medium">{label}</p>
     </div>
   );
-}
+};
