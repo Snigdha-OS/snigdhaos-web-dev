@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download as DownloadIcon, Monitor, Server, HardDrive } from 'lucide-react';
+import { Download as DownloadIcon, Monitor, Server, HardDrive, Smartphone, Code } from 'lucide-react';
 
 export function DownloadPage() {
   return (
@@ -7,7 +7,7 @@ export function DownloadPage() {
       <div className="container mx-auto px-4">
         {/* Hero Section */}
         <section className="text-center mb-16">
-          <h1 className="text-4xl font-bold mb-6">Download Linux Mint</h1>
+          <h1 className="text-4xl font-bold mb-6">Download Snigdha OS</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Choose the edition that best suits your needs. All versions are free to
             download and use.
@@ -15,11 +15,11 @@ export function DownloadPage() {
         </section>
 
         {/* Edition Cards */}
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+        <section className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-16">
           <EditionCard
-            title="Cinnamon Edition"
+            title="Gnome Edition"
             description="Modern, innovative features while being traditional and familiar."
-            icon={<Monitor className="h-12 w-12 text-green-600" />}
+            icon={<Monitor className="h-12 w-12 text-indigo-600" />}
             recommended={true}
           />
           <EditionCard
@@ -31,6 +31,31 @@ export function DownloadPage() {
             title="Xfce Edition"
             description="Lightweight and stable. Perfect for older computers."
             icon={<HardDrive className="h-12 w-12 text-purple-600" />}
+          />
+          <EditionCard
+            title="KDE Plasma Edition"
+            description="Customizable and visually stunning, perfect for power users."
+            icon={<Code className="h-12 w-12 text-pink-600" />}
+          />
+          <EditionCard
+            title="Minimal Edition"
+            description="Barebones version for advanced users who prefer custom setups."
+            icon={<Code className="h-12 w-12 text-gray-600" />}
+          />
+          <EditionCard
+            title="ARM Edition"
+            description="Optimized for ARM-based devices like Raspberry Pi."
+            icon={<Smartphone className="h-12 w-12 text-teal-600" />}
+          />
+          <EditionCard
+            title="Education Edition"
+            description="Packed with educational tools for students and teachers."
+            icon={<Server className="h-12 w-12 text-orange-600" />}
+          />
+          <EditionCard
+            title="Gaming Edition"
+            description="Enhanced with gaming tools and pre-installed gaming libraries."
+            icon={<Monitor className="h-12 w-12 text-red-600" />}
           />
         </section>
 
@@ -66,17 +91,17 @@ export function DownloadPage() {
             <MirrorButton
               region="North America"
               speed="Fast"
-              url="https://mirrors.kernel.org/linuxmint/"
+              url="#"
             />
             <MirrorButton
               region="Europe"
               speed="Very Fast"
-              url="https://mirror.23media.com/linuxmint/"
+              url="#"
             />
             <MirrorButton
               region="Asia"
               speed="Fast"
-              url="https://mirror.xtom.com.hk/linuxmint/"
+              url="#"
             />
           </div>
         </section>
@@ -97,9 +122,9 @@ function EditionCard({
   recommended?: boolean;
 }) {
   return (
-    <div className={`bg-white rounded-lg shadow-lg p-8 relative ${recommended ? 'border-2 border-green-500' : ''}`}>
+    <div className={`bg-white rounded-lg shadow-lg p-8 relative ${recommended ? 'border-2 border-indigo-500' : ''}`}>
       {recommended && (
-        <div className="absolute top-4 right-4 bg-green-500 text-white px-2 py-1 rounded-full text-sm">
+        <div className="absolute top-4 right-4 bg-indigo-500 text-white px-2 py-1 rounded-full text-sm">
           Recommended
         </div>
       )}
@@ -107,7 +132,7 @@ function EditionCard({
       <h3 className="text-xl font-bold mb-2 text-center">{title}</h3>
       <p className="text-gray-600 text-center mb-6">{description}</p>
       <div className="flex justify-center">
-        <button className="flex items-center space-x-2 bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors">
+        <button className="flex items-center space-x-2 bg-indigo-600 text-white px-6 py-2 rounded-[5px] hover:bg-indigo-700 transition-colors">
           <DownloadIcon className="h-5 w-5" />
           <span>Download</span>
         </button>
@@ -135,7 +160,7 @@ function MirrorButton({
           <h3 className="font-bold">{region}</h3>
           <p className="text-sm text-gray-600">{speed}</p>
         </div>
-        <DownloadIcon className="h-5 w-5 text-green-600" />
+        <DownloadIcon className="h-5 w-5 text-indigo-600" />
       </div>
     </a>
   );
