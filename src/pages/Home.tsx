@@ -1,5 +1,5 @@
 import React from 'react';
-import { Download, Shield, Terminal, Award, Users, Coffee, ArrowRight, Star } from 'lucide-react';
+import { Download, Shield, Terminal, Award, Users, Coffee, ArrowRight, Star, Book } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export function Home() {
@@ -30,15 +30,15 @@ export function Home() {
         className="bg-white text-indigo-700 px-8 py-4 rounded-[5px] font-semibold shadow-lg transform hover:scale-105 hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-3"
       >
         <Download className="h-5 w-5" />
-        <span>Download Now</span>
+        <span>Download Now<sup> [Arctic V]</sup></span>
       </Link>
 
       <Link
-        to="/about"
+        to="https://snigdha-os.github.io/documentation/"
         className="border-2 border-white text-white px-8 py-4 rounded-[5px] font-semibold transform hover:scale-105 hover:bg-white hover:text-indigo-700 transition-all duration-300 inline-flex items-center space-x-3"
       >
-        <ArrowRight className="h-5 w-5" />
-        <span>Learn More</span>
+        <Book className="h-5 w-5" />
+        <span>Documentation</span>
       </Link>
     </div>
 
@@ -48,11 +48,11 @@ export function Home() {
         Join a community of like-minded individuals dedicated to enhancing the security and safety of the digital world. Explore our open-source ecosystem and contribute to the next-gen tools.
       </p>
       <Link
-        to="/community"
+        to="https://forum.snigdhaos.org/"
         className="border-2 border-white text-white px-8 py-4 rounded-[5px] font-semibold transform hover:scale-105 hover:bg-white hover:text-indigo-700 transition-all duration-300 inline-flex items-center space-x-3"
       >
         <Users className="h-5 w-5" />
-        <span>Join Our Community</span>
+        <span>Join The Community</span>
       </Link>
     </div>
   </div>
@@ -61,52 +61,52 @@ export function Home() {
       {/* Features Section */}
 <section className="py-16 bg-gradient-to-r from-indigo-50 to-white">
   <div className="container mx-auto px-4">
-    <h2 className="text-4xl font-extrabold text-center text-indigo-700 mb-12 tracking-tight">
+    <h2 className="text-4xl font-bold text-center text-indigo-700 mb-12 tracking-tight">
       Key Features
     </h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
       <FeatureCard
-        icon={<Shield className="h-16 w-16 text-red-500" />}
+        icon={<Shield className="h-10 w-10 text-red-500" />}
         title="Secure"
         description="Regular security updates and a robust system architecture keep your data safe."
       />
       <FeatureCard
-        icon={<Terminal className="h-16 w-16 text-green-500" />}
+        icon={<Terminal className="h-10 w-10 text-green-500" />}
         title="Powerful"
         description="Full access to the terminal and system components for advanced users."
       />
       <FeatureCard
-        icon={<Download className="h-16 w-16 text-blue-500" />}
+        icon={<Download className="h-10 w-10 text-blue-500" />}
         title="Free Forever"
         description="Snigdha OS is free and open source. No costs, no subscriptions."
       />
       <FeatureCard
-        icon={<Award className="h-16 w-16 text-yellow-500" />}
+        icon={<Award className="h-10 w-10 text-yellow-500" />}
         title="Customizable"
         description="Personalize your desktop environment to suit your needs and style."
       />
       <FeatureCard
-        icon={<Users className="h-16 w-16 text-pink-500" />}
+        icon={<Users className="h-10 w-10 text-pink-500" />}
         title="Community Support"
         description="A vibrant community ready to help and share knowledge."
       />
       <FeatureCard
-        icon={<Star className="h-16 w-16 text-indigo-500" />}
+        icon={<Star className="h-10 w-10 text-indigo-500" />}
         title="Feature Rich"
         description="Pre-installed applications and tools for everyday use."
       />
       <FeatureCard
-        icon={<Coffee className="h-16 w-16 text-brown-500" />}
+        icon={<Coffee className="h-10 w-10 text-brown-500" />}
         title="Energy Efficient"
         description="Optimized performance to save energy and enhance hardware longevity."
       />
       <FeatureCard
-        icon={<ArrowRight className="h-16 w-16 text-teal-500" />}
+        icon={<ArrowRight className="h-10 w-10 text-teal-500" />}
         title="Fast Boot"
         description="Experience faster boot times and smooth transitions."
       />
       <FeatureCard
-        icon={<Terminal className="h-16 w-16 text-purple-500" />}
+        icon={<Terminal className="h-10 w-10 text-purple-500" />}
         title="Advanced Tools"
         description="Access specialized penetration testing and ethical hacking tools."
       />
@@ -282,9 +282,9 @@ function FeatureCard({
   description: string;
 }) {
   return (
-    <div className="text-center p-8 bg-white rounded-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300">
+    <div className="text-center p-8 bg-white rounded-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-500">
       <div className="flex justify-center mb-6">{icon}</div>
-      <h3 className="text-2xl font-semibold text-indigo-700 mb-3">{title}</h3>
+      <h3 className="text-xl font-semibold text-indigo-500 mb-3">{title}</h3>
       <p className="text-gray-600 text-lg">{description}</p>
     </div>
   );
@@ -317,17 +317,17 @@ function ReasonCard({
   return (
     <div className="text-center p-6 bg-white rounded-lg shadow hover:shadow-lg transition-shadow">
       <div className="flex justify-center mb-4">{icon}</div>
-      <h3 className="text-lg font-bold mb-2">{title}</h3>
+      <h3 className="text-lg text-indigo-500 font-bold mb-2">{title}</h3>
       <p className="text-gray-600 text-sm">{description}</p>
     </div>
   );
 }
 
-const StatCard = ({ number, label }: { number: string; label: string }) => {
-  return (
-    <div className="bg-white rounded-lg shadow-xl transform hover:scale-105 transition-transform p-8 text-center">
-      <div className="text-5xl font-bold text-indigo-700 mb-4">{number}</div>
-      <p className="text-lg text-gray-600 font-medium">{label}</p>
-    </div>
-  );
-};
+// const StatCard = ({ number, label }: { number: string; label: string }) => {
+//   return (
+//     <div className="bg-white rounded-lg shadow-xl transform hover:scale-105 transition-transform p-8 text-center">
+//       <div className="text-5xl font-bold text-indigo-700 mb-4">{number}</div>
+//       <p className="text-lg text-gray-600 font-medium">{label}</p>
+//     </div>
+//   );
+// };
