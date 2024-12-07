@@ -240,18 +240,6 @@ export function Home() {
   </div>
 </section>
 
-      {/* Community Stats */}
-{/* <section className="py-16 bg-gradient-to-r from-indigo-50 to-indigo-100">
-  <div className="container mx-auto px-4">
-    <h2 className="text-3xl font-bold text-center text-indigo-800 mb-12">Join Our Growing Community</h2>
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <StatCard number="1K+" label="Downloads" />
-      <StatCard number="100+" label="Countries" />
-      <StatCard number="500K+" label="Active Users" />
-    </div>
-  </div>
-</section> */}
-
       {/* CTA Section */}
       <section className="py-16 bg-indigo-600 text-white">
         <div className="container mx-auto px-4 text-center">
@@ -322,12 +310,3 @@ function ReasonCard({
     </div>
   );
 }
-
-// const StatCard = ({ number, label }: { number: string; label: string }) => {
-//   return (
-//     <div className="bg-white rounded-lg shadow-xl transform hover:scale-105 transition-transform p-8 text-center">
-//       <div className="text-5xl font-bold text-indigo-700 mb-4">{number}</div>
-//       <p className="text-lg text-gray-600 font-medium">{label}</p>
-//     </div>
-//   );
-// };
