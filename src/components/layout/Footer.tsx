@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { Github, Gitlab } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { Github } from 'lucide-react';
 
 export function Footer() {
   const [githubFollowers, setGithubFollowers] = useState<number | null>(null);
-  const [gitlabFollowers, setGitlabFollowers] = useState<number | null>(null);
+  // const [gitlabFollowers, setGitlabFollowers] = useState<number | null>(null);
 
   // Fetch GitHub follower count
   useEffect(() => {
@@ -18,16 +18,16 @@ export function Footer() {
   }, []);
 
   // Fetch GitLab follower count
-  useEffect(() => {
-    async function fetchGitlabFollowers() {
-      const response = await fetch('https://gitlab.com/api/v4/users/Snigdha-OS');
-      const data = await response.json();
-      if (data[0]?.followers_count !== undefined) {
-        setGitlabFollowers(data[0].followers_count);
-      }
-    }
-    fetchGitlabFollowers();
-  }, []);
+  // useEffect(() => {
+  //   async function fetchGitlabFollowers() {
+  //     const response = await fetch('https://gitlab.com/api/v4/users/Snigdha-OS');
+  //     const data = await response.json();
+  //     if (data[0]?.followers_count !== undefined) {
+  //       setGitlabFollowers(data[0].followers_count);
+  //     }
+  //   }
+  //   fetchGitlabFollowers();
+  // }, []);
 
   return (
     <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-10">
