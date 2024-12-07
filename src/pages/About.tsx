@@ -5,6 +5,10 @@ interface TeamMember {
   login: string;
   avatar_url: string;
   html_url: string;
+  name: string;
+  bio: string;
+  location: string;
+  company: string;
 }
 
 export function About() {
@@ -96,21 +100,21 @@ export function About() {
               name="John Doe"
               role="Software Engineer"
               quote="Snigdha OS is the perfect balance between simplicity and power. I use it daily for my work."
-              avatarUrl="https://avatars.githubusercontent.com/u/1?v=4" // GitHub avatar URL
+              avatarUrl="https://avatars.githubusercontent.com/u/1?v=4"
               profileUrl="https://github.com/eshanized"
             />
             <Testimonial
               name="Jane Smith"
               role="Designer"
               quote="I love the clean and beautiful interface. It makes my work much more enjoyable."
-              avatarUrl="https://avatars.githubusercontent.com/u/2?v=4" // GitHub avatar URL
+              avatarUrl="https://avatars.githubusercontent.com/u/2?v=4"
               profileUrl="https://github.com/janesmith"
             />
             <Testimonial
               name="Alice Johnson"
               role="Student"
               quote="I switched to Snigdha OS for its stability and performance. It’s been a great experience so far."
-              avatarUrl="https://avatars.githubusercontent.com/u/3?v=4" // GitHub avatar URL
+              avatarUrl="https://avatars.githubusercontent.com/u/3?v=4"
               profileUrl="https://github.com/alicejohnson"
             />
           </div>
@@ -118,7 +122,7 @@ export function About() {
 
         {/* History Section */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold mb-8">Our History</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Our History</h2>
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="space-y-6">
               <TimelineItem
@@ -145,7 +149,7 @@ export function About() {
           </div>
         </section>
 
-        {/* Team Section */}
+        {/* Leadership Team Section */}
         <section>
           <h2 className="text-3xl font-bold mb-8 text-center">Leadership Team</h2>
           {loading ? (
@@ -155,9 +159,12 @@ export function About() {
               {teamMembers.map((member) => (
                 <TeamMemberCard
                   key={member.login}
-                  name={member.login}
+                  name={member.name || member.login}
                   image={member.avatar_url}
                   profileUrl={member.html_url}
+                  bio={member.bio || "Go go, said the bird. Humankind cannot tolerate too much reality!"}
+                  location={member.location || "INDIA"}
+                  company={member.company || "TONMOY INFRASTRUCTURE"}
                 />
               ))}
             </div>
@@ -267,10 +274,16 @@ function TeamMemberCard({
   name,
   image,
   profileUrl,
+  bio,
+  location,
+  company,
 }: {
   name: string;
   image: string;
   profileUrl: string;
+  bio: string;
+  location: string;
+  company: string;
 }) {
   return (
     <div className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
@@ -280,11 +293,14 @@ function TeamMemberCard({
         className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
       />
       <h3 className="font-bold text-lg text-gray-800">{name}</h3>
+      <p className="text-gray-500 text-sm">{bio}</p>
+      <p className="text-gray-600 text-sm mt-2">{location}</p>
+      <p className="text-gray-600 text-sm mt-1">{company}</p>
       <a
         href={profileUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="text-indigo-500 hover:text-indigo-700"
+        className="text-indigo-500 hover:text-indigo-700 mt-2 inline-block"
       >
         View Profile
       </a>
