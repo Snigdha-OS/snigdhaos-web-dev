@@ -14,7 +14,7 @@ export function Header() {
         <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-2">
             <img src="/mint-logo.svg" alt="Linux Mint" className="h-8 w-8" />
-            <span className="font-bold text-xl">Linux Mint</span>
+            <span className="font-bold text-xl">SNIGDHA OS</span>
           </Link>
 
           {/* Mobile menu button */}
@@ -50,7 +50,7 @@ function NavLinks({ isActive }: { isActive: (path: string) => boolean }) {
       <Link
         to="/"
         className={`${
-          isActive('/') ? 'text-green-400' : 'hover:text-green-400'
+          isActive('/') ? 'text-indigo-400' : 'hover:text-indigo-400'
         } transition-colors`}
       >
         Home
@@ -58,7 +58,7 @@ function NavLinks({ isActive }: { isActive: (path: string) => boolean }) {
       <Link
         to="/about"
         className={`${
-          isActive('/about') ? 'text-green-400' : 'hover:text-green-400'
+          isActive('/about') ? 'text-indigo-400' : 'hover:text-indigo-400'
         } transition-colors`}
       >
         About
@@ -66,7 +66,7 @@ function NavLinks({ isActive }: { isActive: (path: string) => boolean }) {
       <Link
         to="/download"
         className={`${
-          isActive('/download') ? 'text-green-400' : 'hover:text-green-400'
+          isActive('/download') ? 'text-indigo-400' : 'hover:text-indigo-400'
         } transition-colors`}
       >
         Download
@@ -74,7 +74,7 @@ function NavLinks({ isActive }: { isActive: (path: string) => boolean }) {
       <Link
         to="/donors"
         className={`${
-          isActive('/donors') ? 'text-green-400' : 'hover:text-green-400'
+          isActive('/donors') ? 'text-indigo-400' : 'hover:text-indigo-400'
         } transition-colors`}
       >
         Donors
@@ -82,7 +82,7 @@ function NavLinks({ isActive }: { isActive: (path: string) => boolean }) {
       <Link
         to="/maintainers"
         className={`${
-          isActive('/maintainers') ? 'text-green-400' : 'hover:text-green-400'
+          isActive('/maintainers') ? 'text-indigo-400' : 'hover:text-indigo-400'
         } transition-colors`}
       >
         Maintainers

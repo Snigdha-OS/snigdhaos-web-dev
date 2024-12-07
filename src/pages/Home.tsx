@@ -9,7 +9,7 @@ export function Home() {
       <section className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white py-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-6">Welcome to Snigdha OS</h1>
-          <p className="text-xl mb-8">From freedom comes elegance</p>
+          <p className="text-xl mb-8">Arch based Linux Distribution for Penetration Testing and Ethical Hacking</p>
           <div className="flex justify-center space-x-4">
           <Link
             to="/download"
@@ -33,93 +33,182 @@ export function Home() {
 
       {/* Features Section */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <FeatureCard
-              icon={<Shield className="h-12 w-12 text-indigo-600" />}
-              title="Secure"
-              description="Regular security updates and a robust system architecture keep your data safe."
-            />
-            <FeatureCard
-              icon={<Terminal className="h-12 w-12 text-indigo-600" />}
-              title="Powerful"
-              description="Full access to the terminal and system components for advanced users."
-            />
-            <FeatureCard
-              icon={<Download className="h-12 w-12 text-indigo-600" />}
-              title="Free Forever"
-              description="Linux Mint is free and open source. No costs, no subscriptions."
-            />
-          </div>
-        </div>
-      </section>
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-12">Key Features</h2>
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <FeatureCard
+        icon={<Shield className="h-12 w-12 text-indigo-600" />}
+        title="Secure"
+        description="Regular security updates and a robust system architecture keep your data safe."
+      />
+      <FeatureCard
+        icon={<Terminal className="h-12 w-12 text-indigo-600" />}
+        title="Powerful"
+        description="Full access to the terminal and system components for advanced users."
+      />
+      <FeatureCard
+        icon={<Download className="h-12 w-12 text-indigo-600" />}
+        title="Free Forever"
+        description="Linux Mint is free and open source. No costs, no subscriptions."
+      />
+      <FeatureCard
+        icon={<Award className="h-12 w-12 text-indigo-600" />}
+        title="Customizable"
+        description="Personalize your desktop environment to suit your needs and style."
+      />
+      <FeatureCard
+        icon={<Users className="h-12 w-12 text-indigo-600" />}
+        title="Community Support"
+        description="A vibrant community ready to help and share knowledge."
+      />
+      <FeatureCard
+        icon={<Star className="h-12 w-12 text-indigo-600" />}
+        title="Feature Rich"
+        description="Pre-installed applications and tools for everyday use."
+      />
+      <FeatureCard
+        icon={<Coffee className="h-12 w-12 text-indigo-600" />}
+        title="Energy Efficient"
+        description="Optimized performance to save energy and enhance hardware longevity."
+      />
+      <FeatureCard
+        icon={<ArrowRight className="h-12 w-12 text-indigo-600" />}
+        title="Fast Boot"
+        description="Experience faster boot times and smooth transitions."
+      />
+      <FeatureCard
+        icon={<Terminal className="h-12 w-12 text-indigo-600" />}
+        title="Advanced Tools"
+        description="Access specialized penetration testing and ethical hacking tools."
+      />
+    </div>
+  </div>
+</section>
+
 
       {/* Latest Release Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Latest Release</h2>
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="flex flex-col md:flex-row items-center">
-              <div className="md:w-1/2 mb-8 md:mb-0">
-                <img
-                  src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-                  alt="Linux Mint Desktop"
-                  className="rounded-lg shadow-md"
-                />
-              </div>
-              <div className="md:w-1/2 md:pl-8">
-                <h3 className="text-2xl font-bold mb-4">Linux Mint 21.3</h3>
-                <p className="text-gray-600 mb-6">
-                  Experience the latest features and improvements in our newest
-                  release. Enjoy enhanced performance, better hardware support, and
-                  a refined user interface.
-                </p>
-                <div className="space-y-4">
-                  <Feature title="New Cinnamon 6.0" description="Improved desktop experience with better performance" />
-                  <Feature title="Updated Software Manager" description="Faster and more reliable package management" />
-                  <Feature title="Enhanced Hardware Support" description="Better compatibility with latest devices" />
-                </div>
-                <Link
-                  to="/download"
-                  className="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition-colors mt-6"
-                >
-                  <span>Learn More</span>
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
+<section className="py-16 bg-gray-100">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-12">Latest Release</h2>
+    <div className="bg-white rounded-lg shadow-lg p-8">
+      <div className="flex flex-col md:flex-row items-center">
+        {/* Image Section */}
+        <div className="md:w-1/2 mb-8 md:mb-0">
+          <img
+            src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+            alt="Linux Mint Desktop"
+            className="rounded-lg shadow-md"
+          />
         </div>
-      </section>
 
-      {/* Why Choose Linux Mint */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Linux Mint?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <ReasonCard
-              icon={<Award className="h-10 w-10 text-yellow-500" />}
-              title="User-Friendly"
-              description="Perfect for beginners and experts alike"
+        {/* Details Section */}
+        <div className="md:w-1/2 md:pl-8">
+          <h3 className="text-2xl font-bold mb-4">Linux Mint 21.3</h3>
+          <p className="text-gray-600 mb-6">
+            Experience the latest features and improvements in our newest release. 
+            Enjoy enhanced performance, better hardware support, and a refined user interface.
+          </p>
+
+          <div className="space-y-6">
+            {/* Key Features */}
+            <Feature
+              title="New Cinnamon 6.0"
+              description="Enjoy a faster and more responsive desktop environment with redesigned animations and improved task handling."
             />
-            <ReasonCard
-              icon={<Users className="h-10 w-10 text-blue-500" />}
-              title="Active Community"
-              description="Get help and support when you need it"
+            <Feature
+              title="Updated Software Manager"
+              description="Enhanced package management with faster load times and a cleaner interface."
             />
-            <ReasonCard
-              icon={<Coffee className="h-10 w-10 text-red-500" />}
-              title="Stable & Reliable"
-              description="Built on solid foundations"
+            <Feature
+              title="Improved Hardware Compatibility"
+              description="Support for the latest devices and hardware configurations ensures a seamless experience."
             />
-            <ReasonCard
-              icon={<Star className="h-10 w-10 text-purple-500" />}
-              title="Feature Rich"
-              description="Everything you need, out of the box"
+            <Feature
+              title="Upgraded Kernel and Drivers"
+              description="Leverage the power of the Linux 6.x kernel for optimal system performance."
+            />
+            <Feature
+              title="System Snapshots with Timeshift"
+              description="Take full control of system recovery with robust snapshot features."
+            />
+            <Feature
+              title="New Theme Options"
+              description="Personalize your desktop with a refreshed collection of themes, including dark mode improvements."
             />
           </div>
+
+          {/* Buttons */}
+          <div className="flex mt-6 space-x-4">
+            <Link
+              to="/download"
+              className="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-2 rounded-[5px] hover:bg-indigo-700 transition-colors"
+            >
+              <span>Download Now</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link
+              to="/changelog"
+              className="inline-flex items-center space-x-2 bg-gray-200 text-indigo-600 px-6 py-2 rounded-[5px] hover:bg-gray-300 transition-colors"
+            >
+              <span>View Changelog</span>
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{/* Why Choose Linux Mint */}
+<section className="py-16 bg-white">
+  <div className="container mx-auto px-4">
+    <h2 className="text-3xl font-bold text-center mb-12">Why Choose Linux Mint?</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <ReasonCard
+        icon={<Award className="h-10 w-10 text-yellow-500" />}
+        title="User-Friendly"
+        description="With its intuitive interface, Linux Mint provides a seamless experience for beginners and experts alike."
+      />
+      <ReasonCard
+        icon={<Users className="h-10 w-10 text-blue-500" />}
+        title="Active Community"
+        description="Join a vibrant community where users collaborate, share solutions, and build knowledge together."
+      />
+      <ReasonCard
+        icon={<Coffee className="h-10 w-10 text-red-500" />}
+        title="Stable & Reliable"
+        description="Built on Ubuntu's LTS base, Linux Mint ensures long-term stability and security updates."
+      />
+      <ReasonCard
+        icon={<Star className="h-10 w-10 text-purple-500" />}
+        title="Feature Rich"
+        description="Get all the essential applications and tools pre-installed, saving you time and effort."
+      />
+      <ReasonCard
+        icon={<Shield className="h-10 w-10 text-green-500" />}
+        title="Privacy Focused"
+        description="Unlike many OS options, Linux Mint respects your privacy with no data tracking or telemetry."
+      />
+      <ReasonCard
+        icon={<Terminal className="h-10 w-10 text-indigo-500" />}
+        title="Powerful Tools"
+        description="Access advanced system tools, a customizable terminal, and powerful package management with APT."
+      />
+      <ReasonCard
+        icon={<Download className="h-10 w-10 text-orange-500" />}
+        title="Free and Open Source"
+        description="Linux Mint is free forever, with its source code available for transparency and community-driven improvements."
+      />
+      <ReasonCard
+        icon={<ArrowRight className="h-10 w-10 text-teal-500" />}
+        title="Easy Upgrades"
+        description="Upgrading to new versions is straightforward, ensuring you always enjoy the latest features without hassle."
+      />
+    </div>
+  </div>
+</section>
 
       {/* Community Stats */}
       <section className="py-16 bg-gray-100">
@@ -141,7 +230,7 @@ export function Home() {
           </p>
           <Link
             to="/download"
-            className="inline-flex items-center space-x-2 bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center space-x-2 bg-white text-indigo-600 px-8 py-3 rounded-[5px] font-semibold hover:bg-gray-100 transition-colors"
           >
             <Download className="h-5 w-5" />
             <span>Download Now</span>
@@ -174,7 +263,7 @@ function Feature({ title, description }: { title: string; description: string })
   return (
     <div className="flex items-start space-x-3">
       <div className="flex-shrink-0">
-        <div className="w-2 h-2 mt-2 rounded-full bg-green-500"></div>
+        <div className="w-2 h-2 mt-2 rounded-[5px] bg-green-500"></div>
       </div>
       <div>
         <h4 className="font-semibold">{title}</h4>
