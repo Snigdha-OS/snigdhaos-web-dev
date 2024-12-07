@@ -6,12 +6,11 @@ export function Footer() {
     <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Linux Mint Section */}
+          {/* Snigdha OS Section */}
           <div>
-            <h3 className="font-extrabold text-lg mb-4">Linux Mint</h3>
+            <h3 className="font-extrabold text-lg mb-4">Snigdha OS</h3>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Linux Mint is an elegant, easy to use, up-to-date, and comfortable
-              GNU/Linux desktop distribution.
+            Arch based Linux Distribution for Penetration Testing and Ethical Hacking!
             </p>
           </div>
 
@@ -20,18 +19,18 @@ export function Footer() {
             <h3 className="font-extrabold text-lg mb-4">Quick Links</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="/blog" className="hover:text-indigo-400 transition-colors">
-                  Blog
+                <a href="https://blog.snigdhaos.org/" className="hover:text-indigo-400 transition-colors">
+                  Blog <sup> upcoming!</sup>
                 </a>
               </li>
               <li>
-                <a href="/forums" className="hover:text-indigo-400 transition-colors">
-                  Forums
+                <a href="https://forum.snigdhaos.org/" className="hover:text-indigo-400 transition-colors">
+                  Forums<sup> maintainance!</sup>
                 </a>
               </li>
               <li>
-                <a href="/community" className="hover:text-indigo-400 transition-colors">
-                  Community
+                <a href="#" className="hover:text-indigo-400 transition-colors">
+                  Community<sup> upcoming!</sup>
                 </a>
               </li>
             </ul>
@@ -43,26 +42,28 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a
-                  href="/docs/installation"
+                  href="https://snigdha-os.github.io/documentation/category/installation"
                   className="hover:text-indigo-400 transition-colors"
                 >
-                  Installation Guide
+                  Installation Guide <sup>
+                    <a href='https://snigdha-os.github.io/documentation/category/installation'>git-version</a> 
+                  </sup>
                 </a>
               </li>
               <li>
                 <a
-                  href="/docs/user-guide"
+                  href="https://snigdha-os.github.io/documentation/category/user-guide"
                   className="hover:text-indigo-400 transition-colors"
                 >
-                  User Guide
+                  User Guide <sup>git-version</sup>
                 </a>
               </li>
               <li>
                 <a
-                  href="/docs/release-notes"
+                  href="https://snigdha-os.github.io/documentation/introduction/release_notes"
                   className="hover:text-indigo-400 transition-colors"
                 >
-                  Release Notes
+                  Release Notes <sup>git-version</sup>
                 </a>
               </li>
             </ul>
