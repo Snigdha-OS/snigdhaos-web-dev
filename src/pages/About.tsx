@@ -1,18 +1,70 @@
-import React from 'react';
-import { Heart, Users, Shield } from 'lucide-react';
+import React, { useEffect, useState } from "react";
+import { Heart, Users, Shield, Package, Coffee } from "lucide-react";
+
+interface TeamMember {
+  login: string;
+  avatar_url: string;
+  html_url: string;
+}
 
 export function About() {
+  const [teamMembers, setTeamMembers] = useState<TeamMember[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchTeamMembers = async () => {
+      try {
+        const response = await fetch(
+          "https://api.github.com/orgs/Snigdha-OS/members"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch team members");
+        }
+        const data = await response.json();
+        setTeamMembers(data);
+      } catch (error) {
+        console.error("Error fetching team members:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchTeamMembers();
+  }, []);
+
   return (
     <div className="py-12">
       <div className="container mx-auto px-4">
         {/* Mission Section */}
         <section className="mb-16 text-center">
-          <h1 className="text-4xl font-bold mb-6">About Linux Mint</h1>
+          <h1 className="text-4xl font-bold mb-6">About Snigdha OS</h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Linux Mint is one of the most popular desktop Linux distributions and
+            Snigdha OS is one of the most upcoming desktop Linux distributions and
             used by millions of people. It is elegant, easy to use, comfortable,
             and powerful.
           </p>
+        </section>
+
+        {/* Features Section */}
+        <section className="mb-16">
+          <h2 className="text-3xl font-bold mb-8 text-center">Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <FeatureCard
+              icon={<Package className="h-12 w-12 text-teal-500" />}
+              title="Fast & Lightweight"
+              description="Snigdha OS is optimized for performance, ensuring fast boot times and smooth user experiences."
+            />
+            <FeatureCard
+              icon={<Shield className="h-12 w-12 text-green-500" />}
+              title="Security First"
+              description="We prioritize your privacy and security, offering regular security updates and patches."
+            />
+            <FeatureCard
+              icon={<Coffee className="h-12 w-12 text-yellow-500" />}
+              title="Developer Friendly"
+              description="Snigdha OS comes with a wide range of tools and a solid environment for developers."
+            />
+          </div>
         </section>
 
         {/* Values Section */}
@@ -36,30 +88,58 @@ export function About() {
           </div>
         </section>
 
+        {/* Testimonials Section */}
+        <section className="mb-16 text-center bg-white py-12">
+          <h2 className="text-4xl font-extrabold text-indigo mb-8">What Our Users Say</h2>
+          <div className="flex flex-col md:flex-row gap-12 justify-center">
+            <Testimonial
+              name="John Doe"
+              role="Software Engineer"
+              quote="Snigdha OS is the perfect balance between simplicity and power. I use it daily for my work."
+              avatarUrl="https://avatars.githubusercontent.com/u/1?v=4" // GitHub avatar URL
+              profileUrl="https://github.com/eshanized"
+            />
+            <Testimonial
+              name="Jane Smith"
+              role="Designer"
+              quote="I love the clean and beautiful interface. It makes my work much more enjoyable."
+              avatarUrl="https://avatars.githubusercontent.com/u/2?v=4" // GitHub avatar URL
+              profileUrl="https://github.com/janesmith"
+            />
+            <Testimonial
+              name="Alice Johnson"
+              role="Student"
+              quote="I switched to Snigdha OS for its stability and performance. It’s been a great experience so far."
+              avatarUrl="https://avatars.githubusercontent.com/u/3?v=4" // GitHub avatar URL
+              profileUrl="https://github.com/alicejohnson"
+            />
+          </div>
+        </section>
+
         {/* History Section */}
         <section className="mb-16">
           <h2 className="text-3xl font-bold mb-8">Our History</h2>
           <div className="bg-white rounded-lg shadow-lg p-8">
             <div className="space-y-6">
               <TimelineItem
-                year="2006"
+                year="2023"
                 title="The Beginning"
-                description="Linux Mint was founded by Clement Lefebvre and launched its first release, Ada."
+                description="Snigdha OS was founded by Eshan Roy (aka eshanized) and launched its first release, Arctic."
               />
               <TimelineItem
-                year="2008"
+                year="2024"
                 title="Growing Popular"
-                description="Linux Mint gained significant popularity and became one of the most widely used Linux distributions."
+                description="Snigdha OS gained significant popularity and became one of the most widely used Linux distributions."
               />
               <TimelineItem
-                year="2010"
-                title="Mint Tools"
-                description="Development of Mint-specific tools began, making system management easier for users."
+                year="2024"
+                title="Penetration Tools"
+                description="Development of penetration-specific tools began, making system management easier for users."
               />
               <TimelineItem
                 year="Present"
                 title="Continuing Innovation"
-                description="Linux Mint continues to innovate while maintaining its commitment to stability and user-friendliness."
+                description="Snigdha OS continues to innovate while maintaining its commitment to stability and user-friendliness."
               />
             </div>
           </div>
@@ -67,26 +147,41 @@ export function About() {
 
         {/* Team Section */}
         <section>
-          <h2 className="text-3xl font-bold mb-8">Leadership Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <TeamMember
-              name="Clement Lefebvre"
-              role="Project Leader"
-              image="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            />
-            <TeamMember
-              name="Gwendal Le Bihan"
-              role="Development Lead"
-              image="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            />
-            <TeamMember
-              name="Joseph Mills"
-              role="Community Manager"
-              image="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-            />
-          </div>
+          <h2 className="text-3xl font-bold mb-8 text-center">Leadership Team</h2>
+          {loading ? (
+            <p className="text-center text-gray-600">Loading team members...</p>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {teamMembers.map((member) => (
+                <TeamMemberCard
+                  key={member.login}
+                  name={member.login}
+                  image={member.avatar_url}
+                  profileUrl={member.html_url}
+                />
+              ))}
+            </div>
+          )}
         </section>
       </div>
+    </div>
+  );
+}
+
+function FeatureCard({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+      <div className="flex justify-center mb-4">{icon}</div>
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="text-gray-600">{description}</p>
     </div>
   );
 }
@@ -101,10 +196,49 @@ function ValueCard({
   description: string;
 }) {
   return (
-    <div className="text-center p-6 bg-white rounded-lg shadow-lg">
+    <div className="text-center p-6 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow">
       <div className="flex justify-center mb-4">{icon}</div>
       <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-gray-600">{description}</p>
+    </div>
+  );
+}
+
+function Testimonial({
+  name,
+  role,
+  quote,
+  avatarUrl,
+  profileUrl,
+}: {
+  name: string;
+  role: string;
+  quote: string;
+  avatarUrl: string;
+  profileUrl: string;
+}) {
+  return (
+    <div className="flex-1 bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow transform hover:scale-105">
+      <p className="text-lg italic text-gray-700 mb-4">"{quote}"</p>
+      <div className="flex items-center justify-center mt-4">
+        <img
+          src={avatarUrl}
+          alt={name}
+          className="w-20 h-20 rounded-full object-cover border-4 border-indigo-500 shadow-md transform hover:scale-110 transition-transform"
+        />
+        <div className="ml-4">
+          <h3 className="font-bold text-xl text-gray-800">{name}</h3>
+          <p className="text-gray-500 text-sm">{role}</p>
+          <a
+            href={profileUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-indigo-600 hover:text-indigo-800 text-sm mt-2 inline-block"
+          >
+            View Profile
+          </a>
+        </div>
+      </div>
     </div>
   );
 }
@@ -129,24 +263,31 @@ function TimelineItem({
   );
 }
 
-function TeamMember({
+function TeamMemberCard({
   name,
-  role,
   image,
+  profileUrl,
 }: {
   name: string;
-  role: string;
   image: string;
+  profileUrl: string;
 }) {
   return (
-    <div className="text-center">
+    <div className="text-center bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow">
       <img
         src={image}
         alt={name}
         className="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
       />
-      <h3 className="font-bold text-lg">{name}</h3>
-      <p className="text-gray-600">{role}</p>
+      <h3 className="font-bold text-lg text-gray-800">{name}</h3>
+      <a
+        href={profileUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-indigo-500 hover:text-indigo-700"
+      >
+        View Profile
+      </a>
     </div>
   );
 }
