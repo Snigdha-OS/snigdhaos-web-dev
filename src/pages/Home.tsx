@@ -6,23 +6,27 @@ export function Home() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-green-700 text-white py-20">
+      <section className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white py-20">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold mb-6">Welcome to Linux Mint</h1>
+          <h1 className="text-5xl font-bold mb-6">Welcome to Snigdha OS</h1>
           <p className="text-xl mb-8">From freedom comes elegance</p>
           <div className="flex justify-center space-x-4">
-            <Link
-              to="/download"
-              className="bg-white text-green-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
-            >
-              Download Now
+          <Link
+            to="/download"
+            className="bg-white text-indigo-700 px-8 py-3 rounded-[5px] font-semibold hover:bg-gray-100 transition-colors inline-flex items-center space-x-2"
+          >
+          <Download className="h-5 w-5" /> {/* Icon */}
+          <span>Download Now</span>
             </Link>
+
             <Link
-              to="/about"
-              className="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-green-700 transition-colors"
-            >
-              Learn More
-            </Link>
+  to="/about"
+  className="border-2 border-white text-white px-8 py-3 rounded-[5px] font-semibold hover:bg-white hover:text-indigo-700 transition-colors inline-flex items-center space-x-2"
+>
+  <ArrowRight className="h-5 w-5" /> {/* Icon */}
+  <span>Learn More</span>
+</Link>
+
           </div>
         </div>
       </section>
@@ -32,17 +36,17 @@ export function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <FeatureCard
-              icon={<Shield className="h-12 w-12 text-green-600" />}
+              icon={<Shield className="h-12 w-12 text-indigo-600" />}
               title="Secure"
               description="Regular security updates and a robust system architecture keep your data safe."
             />
             <FeatureCard
-              icon={<Terminal className="h-12 w-12 text-green-600" />}
+              icon={<Terminal className="h-12 w-12 text-indigo-600" />}
               title="Powerful"
               description="Full access to the terminal and system components for advanced users."
             />
             <FeatureCard
-              icon={<Download className="h-12 w-12 text-green-600" />}
+              icon={<Download className="h-12 w-12 text-indigo-600" />}
               title="Free Forever"
               description="Linux Mint is free and open source. No costs, no subscriptions."
             />
@@ -77,7 +81,7 @@ export function Home() {
                 </div>
                 <Link
                   to="/download"
-                  className="inline-flex items-center space-x-2 bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition-colors mt-6"
+                  className="inline-flex items-center space-x-2 bg-indigo-600 text-white px-6 py-2 rounded-full hover:bg-indigo-700 transition-colors mt-6"
                 >
                   <span>Learn More</span>
                   <ArrowRight className="h-4 w-4" />
@@ -129,7 +133,7 @@ export function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-green-600 text-white">
+      <section className="py-16 bg-indigo-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Try Linux Mint?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
@@ -137,7 +141,7 @@ export function Home() {
           </p>
           <Link
             to="/download"
-            className="inline-flex items-center space-x-2 bg-white text-green-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+            className="inline-flex items-center space-x-2 bg-white text-indigo-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
           >
             <Download className="h-5 w-5" />
             <span>Download Now</span>
@@ -201,7 +205,7 @@ function ReasonCard({
 function StatCard({ number, label }: { number: string; label: string }) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-8 text-center">
-      <div className="text-4xl font-bold text-green-600 mb-2">{number}</div>
+      <div className="text-4xl font-bold text-indigo-600 mb-2">{number}</div>
       <div className="text-gray-600">{label}</div>
     </div>
   );
