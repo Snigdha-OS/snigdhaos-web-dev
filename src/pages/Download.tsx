@@ -50,8 +50,8 @@ export function DownloadPage() {
           <div className="mt-8 space-y-6">
             <div className="flex justify-center items-center space-x-4">
               <FeatureBadge color="indigo" text="Lightweight & Fast" />
-              <FeatureBadge color="purple" text="Open Source & Free" />
-              <FeatureBadge color="green" text="Customizable & Secure" />
+              <FeatureBadge color="indigo" text="Open Source & Free" />
+              <FeatureBadge color="indigo" text="Customizable & Secure" />
             </div>
             <p className="text-lg text-gray-700 max-w-4xl mx-auto">
               Snigdha OS is designed to provide an unparalleled experience,
