@@ -37,7 +37,7 @@ export function Header() {
 
           {/* Desktop navigation */}
           <nav className="hidden md:flex space-x-8">
-            <NavLinks isActive={isActive} />
+            <NavLinks isActive={isActive} closeMenu={() => setIsMenuOpen(false)} />
           </nav>
         </div>
 
@@ -45,7 +45,7 @@ export function Header() {
         {isMenuOpen && (
           <nav className="md:hidden mt-4">
             <div className="flex flex-col space-y-4 bg-gray-900 p-4 rounded-lg shadow-md">
-              <NavLinks isActive={isActive} />
+              <NavLinks isActive={isActive} closeMenu={() => setIsMenuOpen(false)} />
             </div>
           </nav>
         )}
@@ -54,7 +54,7 @@ export function Header() {
   );
 }
 
-function NavLinks({ isActive }: { isActive: (path: string) => boolean }) {
+function NavLinks({ isActive, closeMenu }: { isActive: (path: string) => boolean; closeMenu: () => void }) {
   return (
     <>
       {['/', '/about', '/download', '/donors', '/maintainers'].map((path, idx) => {
@@ -68,6 +68,7 @@ function NavLinks({ isActive }: { isActive: (path: string) => boolean }) {
                 ? 'text-indigo-400 underline underline-offset-4'
                 : 'hover:text-indigo-400'
             } font-medium transition-colors`}
+            onClick={closeMenu} // Close the menu when a link is clicked
           >
             {labels[idx]}
           </Link>
