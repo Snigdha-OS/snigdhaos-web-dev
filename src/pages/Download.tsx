@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Download as DownloadIcon,
-  Monitor,
-  Server,
-  HardDrive,
-  Smartphone,
-  Code,
-} from 'lucide-react';
+import { Download as DownloadIcon, Monitor, Server, HardDrive, Smartphone, Code } from 'lucide-react';
 
 export function DownloadPage() {
   const [userLocation, setUserLocation] = useState<string | null>(null);
+  const [userRegion, setUserRegion] = useState<string | null>(null); // Added userRegion to store the region
 
   // Detect user location using a public API
   useEffect(() => {
@@ -18,13 +12,27 @@ export function DownloadPage() {
         const response = await fetch('https://ipapi.co/json/');
         const data = await response.json();
         setUserLocation(`${data.city}, ${data.country}`);
+        setUserRegion(data.country); // Store the user's country or region
       } catch (error) {
         console.error('Failed to fetch user location:', error);
         setUserLocation(null);
+        setUserRegion(null); // Ensure region is null on error
       }
     }
     fetchLocation();
   }, []);
+
+  // Find the closest mirror based on the user's region
+  const getSuggestedMirror = () => {
+    if (!userRegion) return null; // If region is not detected, return null
+
+    // Map userRegion to mirror data and suggest the closest region
+    return mirrorData.find((mirror) =>
+      mirror.region.toLowerCase().includes(userRegion.toLowerCase())
+    );
+  };
+
+  const suggestedMirror = getSuggestedMirror();
 
   return (
     <div className="py-12">
@@ -52,19 +60,6 @@ export function DownloadPage() {
               perfect for home users, professionals, and enterprises. Download
               today to unlock the full potential of your hardware.
             </p>
-            <div className="mt-8">
-              <ActionButton
-                href="#"
-                color="indigo"
-                text="Explore Editions"
-              />
-              <ActionButton
-                href="#"
-                color="gray"
-                text="Read More"
-                className="ml-4"
-              />
-            </div>
           </div>
         </section>
 
@@ -125,6 +120,14 @@ export function DownloadPage() {
               <MirrorButton key={index} {...mirror} />
             ))}
           </div>
+          {suggestedMirror && (
+            <div className="mt-8 text-center">
+              <h3 className="text-2xl font-bold text-indigo-600">
+                Suggested Mirror for You
+              </h3>
+              <MirrorButton {...suggestedMirror} />
+            </div>
+          )}
         </section>
       </div>
     </div>
@@ -145,27 +148,6 @@ function FeatureBadge({
     >
       {text}
     </span>
-  );
-}
-
-function ActionButton({
-  href,
-  text,
-  color,
-  className = '',
-}: {
-  href: string;
-  text: string;
-  color: string;
-  className?: string;
-}) {
-  return (
-    <a
-      href={href}
-      className={`px-6 py-3 bg-${color}-600 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-${color}-700 transition-colors ${className}`}
-    >
-      {text}
-    </a>
   );
 }
 
