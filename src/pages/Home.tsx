@@ -30,7 +30,7 @@ export function Home() {
         className="bg-white text-indigo-700 px-8 py-4 rounded-[5px] font-semibold shadow-lg transform hover:scale-105 hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-3"
       >
         <Download className="h-5 w-5" />
-        <span>Download Now<sup> [Arctic V]</sup></span>
+        <span>Download Now</span>
       </Link>
 
       <Link
