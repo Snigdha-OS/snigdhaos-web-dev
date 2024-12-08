@@ -3,7 +3,6 @@ import { Github } from 'lucide-react';
 
 export function Footer() {
   const [githubFollowers, setGithubFollowers] = useState<number | null>(null);
-  // const [gitlabFollowers, setGitlabFollowers] = useState<number | null>(null);
 
   // Fetch GitHub follower count
   useEffect(() => {
@@ -18,34 +17,44 @@ export function Footer() {
   }, []);
 
   return (
-    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-10">
+    <footer className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white py-16">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Snigdha OS Section */}
           <div>
-            <h3 className="font-extrabold text-lg mb-4">Snigdha OS</h3>
+            <h3 className="font-bold text-xl mb-6 text-indigo-400">Snigdha OS</h3>
             <p className="text-sm text-gray-400 leading-relaxed">
-              Arch based Linux Distribution for Penetration Testing and Ethical Hacking!
+              Arch-based Linux Distribution for Penetration Testing and Ethical Hacking! Experience power and simplicity
+              like never before.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-extrabold text-lg mb-4">Quick Links</h3>
-            <ul className="space-y-3 text-sm">
+            <h3 className="font-bold text-xl mb-6 text-indigo-400">Quick Links</h3>
+            <ul className="space-y-4 text-sm">
               <li>
-                <a href="https://blog.snigdhaos.org/" className="hover:text-indigo-400 transition-colors">
-                  Blog <sup> upcoming!</sup>
+                <a
+                  href="https://blog.snigdhaos.org/"
+                  className="hover:text-indigo-400 transition-colors"
+                >
+                  Blog <span className="text-xs text-gray-400">(Upcoming!)</span>
                 </a>
               </li>
               <li>
-                <a href="https://forum.snigdhaos.org/" className="hover:text-indigo-400 transition-colors">
-                  Forums<sup> maintenance!</sup>
+                <a
+                  href="https://forum.snigdhaos.org/"
+                  className="hover:text-indigo-400 transition-colors"
+                >
+                  Forums <span className="text-xs text-gray-400">(Maintenance!)</span>
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-indigo-400 transition-colors">
-                  Community<sup> upcoming!</sup>
+                <a
+                  href="#"
+                  className="hover:text-indigo-400 transition-colors"
+                >
+                  Community <span className="text-xs text-gray-400">(Upcoming!)</span>
                 </a>
               </li>
             </ul>
@@ -53,16 +62,14 @@ export function Footer() {
 
           {/* Documentation */}
           <div>
-            <h3 className="font-extrabold text-lg mb-4">Documentation</h3>
-            <ul className="space-y-3 text-sm">
+            <h3 className="font-bold text-xl mb-6 text-indigo-400">Documentation</h3>
+            <ul className="space-y-4 text-sm">
               <li>
                 <a
                   href="https://snigdha-os.github.io/documentation/category/installation"
                   className="hover:text-indigo-400 transition-colors"
                 >
-                  Installation Guide <sup>
-                    <a href="https://snigdha-os.github.io/documentation/category/installation">git-version</a>
-                  </sup>
+                  Installation Guide
                 </a>
               </li>
               <li>
@@ -70,7 +77,7 @@ export function Footer() {
                   href="https://snigdha-os.github.io/documentation/category/user-guide"
                   className="hover:text-indigo-400 transition-colors"
                 >
-                  User Guide <sup>git-version</sup>
+                  User Guide
                 </a>
               </li>
               <li>
@@ -78,7 +85,7 @@ export function Footer() {
                   href="https://snigdha-os.github.io/documentation/introduction/release_notes"
                   className="hover:text-indigo-400 transition-colors"
                 >
-                  Release Notes <sup>git-version</sup>
+                  Release Notes
                 </a>
               </li>
             </ul>
@@ -86,33 +93,31 @@ export function Footer() {
 
           {/* Connect Section */}
           <div>
-            <h3 className="font-extrabold text-lg mb-4">Connect</h3>
-            <div className="flex space-x-5">
-              {/* GitHub Follower Count Card */}
-              <div className="bg-gray-800 p-4 rounded-lg shadow-lg flex items-center space-x-3">
-                <a
-                  href="https://github.com/Snigdha-OS"
-                  className="hover:text-indigo-400 transition-all"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="h-7 w-7 text-white" />
-                </a>
+            <h3 className="font-bold text-xl mb-6 text-indigo-400">Connect</h3>
+            <div className="flex items-center space-x-5">
+              <a
+                href="https://github.com/Snigdha-OS"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-3 bg-gray-800 hover:bg-indigo-500 transition-colors px-4 py-3 rounded-lg shadow-lg"
+              >
+                <Github className="h-7 w-7 text-white" />
                 {githubFollowers !== null && (
                   <div className="text-white">
-                    <span className="block text-sm">Followers</span>
-                    <span className="text-lg font-bold">{githubFollowers}</span>
+                    <span className="text-sm">Followers</span>
+                    <span className="block text-lg font-bold">{githubFollowers}</span>
                   </div>
                 )}
-              </div>
+              </a>
             </div>
           </div>
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-12 pt-8 border-t border-gray-700 text-center text-sm text-gray-500">
+        <div className="mt-16 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
           <p>
-            © {new Date().getFullYear()} Snigdha OS℠ & Tonmoy Infrastructure™. All rights reserved.
+            © {new Date().getFullYear()} <span className="text-indigo-400">Snigdha OS</span> & Tonmoy Infrastructure™.
+            All rights reserved.
           </p>
           <p className="mt-2">Built with ❤️ by the Snigdha OS team.</p>
         </div>
