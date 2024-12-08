@@ -3,7 +3,7 @@ import { Download as DownloadIcon, Monitor, Server, HardDrive, Smartphone, Code 
 
 export function DownloadPage() {
   const [userLocation, setUserLocation] = useState<string | null>(null);
-  const [userRegion, setUserRegion] = useState<string | null>(null); // Added userRegion to store the region
+  const [userRegion, setUserRegion] = useState<string | null>(null);
 
   // Detect user location using a public API
   useEffect(() => {
@@ -16,7 +16,7 @@ export function DownloadPage() {
       } catch (error) {
         console.error('Failed to fetch user location:', error);
         setUserLocation(null);
-        setUserRegion(null); // Ensure region is null on error
+        setUserRegion(null);
       }
     }
     fetchLocation();
@@ -25,13 +25,30 @@ export function DownloadPage() {
   // Find the closest mirror based on the user's region
   const getSuggestedMirror = () => {
     if (!userRegion) return null; // If region is not detected, return null
-
-    // Map userRegion to mirror data and suggest the closest region
+  
+    // Normalize userRegion to handle cases like "United States" vs. "USA"
+    const regionMap: { [key: string]: string } = {
+      "united states": "north america",
+      "canada": "north america",
+      "brazil": "south america",
+      "argentina": "south america",
+      "germany": "europe",
+      "france": "europe",
+      "india": "asia",
+      "japan": "asia",
+      "south africa": "africa",
+      "australia": "australia",
+    };
+  
+    // Lowercase the userRegion for more lenient matching
+    const normalizedRegion = regionMap[userRegion.toLowerCase()] || userRegion.toLowerCase();
+  
+    // Find the closest mirror based on the user's region
     return mirrorData.find((mirror) =>
-      mirror.region.toLowerCase().includes(userRegion.toLowerCase())
+      mirror.region.toLowerCase().includes(normalizedRegion)
     );
   };
-
+  
   const suggestedMirror = getSuggestedMirror();
 
   return (
@@ -229,11 +246,13 @@ function MirrorButton({
   speed,
   host,
   url,
+  suggested = false,  // Added 'suggested' prop to highlight the suggested mirror
 }: {
   region: string;
   speed: string;
   host: string;
   url: string;
+  suggested?: boolean; // Optional prop to check if this is the suggested mirror
 }) {
   const speedColor = {
     'Very Fast': 'text-green-500',
@@ -244,7 +263,7 @@ function MirrorButton({
   return (
     <a
       href={url}
-      className="block bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 border border-gray-200"
+      className={`block bg-white rounded-lg shadow hover:shadow-lg transition-shadow p-6 border border-gray-200 ${suggested ? 'border-2 border-indigo-500 bg-indigo-100' : ''}`}
     >
       <div className="flex flex-col space-y-3">
         <div className="text-center">
@@ -257,6 +276,11 @@ function MirrorButton({
         <button className="bg-indigo-600 text-white py-2 px-4 rounded-lg">
           Download
         </button>
+        {suggested && (
+          <div className="absolute top-2 right-2 bg-indigo-600 text-white text-sm px-2 py-1 rounded-lg">
+            Suggested Mirror
+          </div>
+        )}
       </div>
     </a>
   );
@@ -323,15 +347,7 @@ const editionData = [
   },
 ];
 
-// const mirrorData = [
-//   {
-//     region: 'North America',
-//     speed: 'Fast',
-//     host: 'MirrorHost USA',
-//     url: '#',
-//   },
-//   // ... Add other mirrors similarly
-// ];
+// Mirrors Data
 const mirrorData = [
   {
     region: 'North America',
