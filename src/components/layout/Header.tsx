@@ -9,71 +9,95 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-800 text-white shadow-lg">
+    <header className="sticky top-0 z-50 bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white shadow-md">
       <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-3">
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="flex items-center space-x-4 group">
             <img
               src="/snigdhaos-logo.svg"
               alt="Snigdha OS"
-              className="h-10 w-10 hover:scale-110 transition-transform"
+              className="h-12 w-12 group-hover:scale-125 transition-transform duration-300"
             />
-            <span className="font-extrabold text-2xl tracking-wide">
+            <span className="font-extrabold text-3xl tracking-wide text-indigo-400 group-hover:text-white transition-colors duration-300">
               SNIGDHA OS
             </span>
           </Link>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-700 transition-all"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6" />
+              <X className="h-7 w-7 animate-spin-reverse" />
             ) : (
-              <Menu className="h-6 w-6" />
+              <Menu className="h-7 w-7 animate-spin" />
             )}
           </button>
 
           {/* Desktop navigation */}
-          <nav className="hidden md:flex space-x-8">
-            <NavLinks isActive={isActive} closeMenu={() => setIsMenuOpen(false)} />
+          <nav className="hidden md:flex space-x-10">
+            <NavLinks isActive={isActive} closeMenu={() => setIsMenuOpen(false)} animate />
           </nav>
         </div>
 
         {/* Mobile navigation */}
-        {isMenuOpen && (
-          <nav className="md:hidden mt-4">
-            <div className="flex flex-col space-y-4 bg-gray-900 p-4 rounded-lg shadow-md">
-              <NavLinks isActive={isActive} closeMenu={() => setIsMenuOpen(false)} />
-            </div>
-          </nav>
-        )}
+        <div
+          className={`${
+            isMenuOpen ? 'animate-fade-in-down' : 'animate-fade-out-up'
+          } md:hidden overflow-hidden transition-all duration-500`}
+        >
+          {isMenuOpen && (
+            <nav className="mt-4">
+              <div className="flex flex-col space-y-4 bg-gray-800 p-5 rounded-lg shadow-lg">
+                <NavLinks
+                  isActive={isActive}
+                  closeMenu={() => setIsMenuOpen(false)}
+                  animate
+                />
+              </div>
+            </nav>
+          )}
+        </div>
       </div>
     </header>
   );
 }
 
-function NavLinks({ isActive, closeMenu }: { isActive: (path: string) => boolean; closeMenu: () => void }) {
+function NavLinks({
+  isActive,
+  closeMenu,
+  animate,
+}: {
+  isActive: (path: string) => boolean;
+  closeMenu: () => void;
+  animate?: boolean;
+}) {
   return (
-    <>
+    <ul className="space-y-4 md:space-y-0 md:flex md:space-x-10">
       {['/', '/about', '/download', '/donors', '/maintainers'].map((path, idx) => {
         const labels = ['Home', 'About', 'Download', 'Donors', 'Maintainers'];
         return (
-          <Link
+          <li
             key={path}
-            to={path}
             className={`${
-              isActive(path)
-                ? 'text-indigo-400 underline underline-offset-4'
-                : 'hover:text-indigo-400'
-            } font-medium transition-colors`}
-            onClick={closeMenu} // Close the menu when a link is clicked
+              animate ? 'animate-fade-in-up delay-' + idx * 100 : ''
+            }`}
           >
-            {labels[idx]}
-          </Link>
+            <Link
+              to={path}
+              className={`${
+                isActive(path)
+                  ? 'text-indigo-500 underline underline-offset-4 decoration-2'
+                  : 'text-gray-300 hover:text-indigo-400'
+              } font-medium transition-all duration-300 hover:scale-110`}
+              onClick={closeMenu}
+            >
+              {labels[idx]}
+            </Link>
+          </li>
         );
       })}
-    </>
+    </ul>
   );
 }
