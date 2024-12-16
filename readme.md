@@ -64,8 +64,8 @@ To get started with development, you need:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Snigdha-OS/Snigdha OS-web-dev.git
-   cd Snigdha OS-web-dev
+   git clone https://github.com/Snigdha-OS/snigdhaos-web-dev.git
+   cd snigdhaos-web-dev
    ```
 
 2. Install dependencies:
