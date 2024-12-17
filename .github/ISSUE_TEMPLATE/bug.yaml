@@ -20,42 +20,36 @@ body:
       label: Page URL
       description: The exact URL or page where the issue occurred.
       placeholder: e.g https://snigdhaos.org/
-      required: true
-
+  
   - type: textarea
     attributes:
       label: Description of the Issue
       description: Please describe the issue in detail. Include any error messages, broken features, or unexpected behavior.
       placeholder: Describe the issue in detail...
-      required: true
 
   - type: textarea
     attributes:
       label: Steps to Reproduce
       description: Please outline the steps to reproduce the issue. The more specific, the better!
       placeholder: Step 1: Do this, Step 2: Do that, etc.
-      required: true
 
   - type: input
     attributes:
       label: Expected Behavior
       description: What did you expect to happen instead of the issue?
       placeholder: e.g. The page should load without errors.
-      required: true
 
   - type: textarea
     attributes:
       label: Actual Behavior
       description: What actually happened? Please include any console logs, screenshots, or other relevant information.
       placeholder: Describe what happened...
-      required: true
 
   - type: input
     attributes:
       label: Browser Information
       description: Please provide the browser and version where the issue was noticed.
       placeholder: e.g Chrome 95.0
-      required: true
 
   - type: checkboxes
     attributes:
