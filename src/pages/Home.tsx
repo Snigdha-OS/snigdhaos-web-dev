@@ -149,77 +149,77 @@ export function Home() {
       </section>
 
       {/* Latest Release Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Latest Release 🎉</h2>
-          <div className="bg-white rounded-lg shadow-lg p-8">
-            <div className="flex flex-col md:flex-row items-center">
-              {/* Image Section */}
-              <div className="md:w-1/2 mb-8 md:mb-0">
-                <img
-                  src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-                  alt="Snigdha OS Desktop"
-                  className="rounded-lg shadow-md"
-                />
-              </div>
+      <section className="py-16 bg-gradient-to-r from-indigo-100 to-indigo-200">
+  <div className="container mx-auto px-4">
+    <h2 className="text-4xl font-extrabold text-center mb-12 text-indigo-800">
+      🎉 Latest Release: <span className="text-indigo-600">Snigdha OS | Arctic V ❄️</span>
+    </h2>
 
-              {/* Details Section */}
-              <div className="md:w-1/2 md:pl-8">
-                <h3 className="text-2xl font-regular mb-4">Snigdha OS | <b>Arctic V</b> ❄️</h3>
-                <p className="text-gray-600 mb-6">
-                  Experience the latest features and improvements in our newest release. Enjoy enhanced performance, better hardware support, and a refined user interface. 🌟
-                </p>
+    <div className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+      {/* Image Section */}
+      <div className="md:w-1/2 mb-8 md:mb-0">
+        <img
+          src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+          alt="Snigdha OS Desktop"
+          className="rounded-lg shadow-xl transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
+        />
+      </div>
 
-                <div className="space-y-6">
-                  {/* Key Features */}
-                  <Feature
-                    title="New Gnome 47.0"
-                    description="Enjoy a faster and more responsive desktop environment with redesigned animations and improved task handling. 🚀"
-                  />
-                  <Feature
-                    title="Updated Software Manager"
-                    description="Enhanced package management with faster load times and a cleaner interface. ⚙️"
-                  />
-                  <Feature
-                    title="Improved Hardware Compatibility"
-                    description="Support for the latest devices and hardware configurations ensures a seamless experience. 🖥️"
-                  />
-                  <Feature
-                    title="Upgraded Kernel and Drivers"
-                    description="Leverage the power of the Linux 6.x Zen kernel for optimal system performance. 🖧"
-                  />
-                  <Feature
-                    title="System Snapshots with Timeshift"
-                    description="Take full control of system recovery with robust snapshot features. 🔄"
-                  />
-                  <Feature
-                    title="New Theme Options"
-                    description="Personalize your desktop with a refreshed collection of themes, including dark mode improvements. 🌒"
-                  />
-                </div>
+      {/* Release Details Section */}
+      <div className="md:w-1/2 md:pl-8 p-8 space-y-6">
+        <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+          Snigdha OS | Arctic V brings performance enhancements, better hardware support, and a whole new visual refresh! Experience the best of both worlds: sleek design and robust functionality. 🚀
+        </p>
 
-                {/* Buttons */}
-                <div className="flex mt-6 justify-center space-x-4">
-                  <Link
-                    to="/download"
-                    className="inline-flex items-center space-x-3 bg-indigo-600 text-white px-8 py-4 rounded-[5px] hover:bg-indigo-700 transition-colors"
-                  >
-                    <span>Download Now 🚀</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                  <Link
-                    to="/changelog"
-                    className="inline-flex items-center space-x-2 bg-gray-200 text-indigo-600 px-6 py-2 rounded-[5px] hover:bg-gray-300 transition-colors"
-                  >
-                    <span>View Changelog 📜</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="space-y-6">
+          {/* Key Features */}
+          <Feature
+            title="🌐 New GNOME 47.0"
+            description="A fresh, faster, and more intuitive GNOME experience that simplifies navigation with improved responsiveness."
+          />
+          <Feature
+            title="🛠️ Updated Software Manager"
+            description="Enjoy a cleaner, faster interface for package management with streamlined features."
+          />
+          <Feature
+            title="🔧 Improved Hardware Support"
+            description="Snigdha OS ensures seamless compatibility with modern devices and hardware configurations for a smooth experience."
+          />
+          <Feature
+            title="⚡ Upgraded Kernel & Drivers"
+            description="Experience better performance with the latest Linux 6.x Zen kernel and optimized drivers for your hardware."
+          />
+          <Feature
+            title="🔄 Timeshift Snapshots"
+            description="Create and manage system snapshots to restore your system whenever needed, ensuring peace of mind."
+          />
+          <Feature
+            title="🎨 New Theme Options"
+            description="Customize your desktop with a refreshed collection of themes and dark mode improvements for a more personalized look."
+          />
         </div>
-      </section>
+
+        {/* Buttons */}
+        <div className="flex mt-8 justify-center space-x-6">
+          <Link
+            to="/download"
+            className="inline-flex items-center space-x-3 bg-indigo-600 text-white px-8 py-4 rounded-xl shadow-lg hover:bg-indigo-700 transform transition-all duration-300 hover:scale-105"
+          >
+            <Download className="h-5 w-5" />
+            <span>Download Now 🚀</span>
+          </Link>
+          <Link
+            to="/changelog"
+            className="inline-flex items-center space-x-2 bg-gray-200 text-indigo-700 px-6 py-2 rounded-xl shadow-lg hover:bg-gray-300 transform transition-all duration-300 hover:scale-105"
+          >
+            <ArrowRight className="h-5 w-5" />
+            <span>View Changelog 📜</span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Why Choose Snigdha OS */}
       <section className="py-16 bg-white">
