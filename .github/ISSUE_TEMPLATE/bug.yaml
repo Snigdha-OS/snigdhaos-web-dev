@@ -1,0 +1,78 @@
+name: 🐞 Report Bug in Snigdha OS Web Dev
+description: Help us improve the Snigdha OS Web Development experience by reporting any issues.
+labels: [bug]
+assignees: [eshanized, alokified]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📝 Issue Details
+
+        Thank you for reporting an issue in the Snigdha OS Web Dev repository! Please provide as much detail as possible to help us resolve the issue efficiently. 
+
+        - **Is this issue reproducible?** Yes / No
+        - **Can you provide steps to reproduce the issue?** 
+        - **What browser and version are you using?** 
+        - **Are you using any specific device or screen resolution?** 
+
+  - type: input
+    attributes:
+      label: Page URL
+      description: The exact URL or page where the issue occurred.
+      placeholder: e.g https://snigdhaos.org/
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Description of the Issue
+      description: Please describe the issue in detail. Include any error messages, broken features, or unexpected behavior.
+      placeholder: Describe the issue in detail...
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Please outline the steps to reproduce the issue. The more specific, the better!
+      placeholder: Step 1: Do this, Step 2: Do that, etc.
+      required: true
+
+  - type: input
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen instead of the issue?
+      placeholder: e.g. The page should load without errors.
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Actual Behavior
+      description: What actually happened? Please include any console logs, screenshots, or other relevant information.
+      placeholder: Describe what happened...
+      required: true
+
+  - type: input
+    attributes:
+      label: Browser Information
+      description: Please provide the browser and version where the issue was noticed.
+      placeholder: e.g Chrome 95.0
+      required: true
+
+  - type: checkboxes
+    attributes:
+      label: Self-service
+      description: If you think you could contribute a fix for this bug, please check the box below. 
+      options:
+        - label: I'd be willing to fix this bug myself.
+        - label: I have tested my solution.
+      
+  - type: input
+    attributes:
+      label: Your GitHub Username
+      description: If you'd like us to acknowledge your contribution, provide your GitHub username.
+      placeholder: e.g johndoe
+
+  - type: textarea
+    attributes:
+      label: Additional Comments
+      description: Add any other relevant information, screenshots, or logs that could help us resolve the issue faster.
+      placeholder: Add anything else that may be relevant...
