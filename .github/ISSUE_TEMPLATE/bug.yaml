@@ -62,8 +62,8 @@ body:
       label: Self-service
       description: If you think you could contribute a fix for this bug, please check the box below. 
       options:
-        - label: I'd be willing to fix this bug myself.
-        - label: I have tested my solution.
+        - label: "I'd be willing to fix this bug myself."
+        - label: "I have tested my solution."
       
   - type: input
     attributes:
