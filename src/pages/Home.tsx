@@ -27,6 +27,13 @@ export function Home() {
             background-size: 300% 300%; /* Makes the gradient larger for animation */
             animation: gradientAnimation 15s ease infinite; /* Animates the gradient */
           }
+
+          /* Card hover effect */
+          .card:hover {
+            transform: scale(1.05); /* Slight zoom-in effect */
+            transition: transform 0.3s ease-in-out; /* Smooth transition */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Adding subtle shadow */
+          }
         `}
       </style>
 
@@ -268,7 +275,7 @@ export function Home() {
 }
 
 const FeatureCard = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => (
-  <div className="bg-white p-6 rounded-lg shadow-md text-center">
+  <div className="bg-white p-6 rounded-lg shadow-md text-center card">
     <div className="mb-4">{icon}</div>
     <h4 className="text-xl font-semibold text-indigo-700">{title}</h4>
     <p className="text-gray-600 mt-2">{description}</p>
@@ -291,7 +298,7 @@ const ReasonCard = ({
   title: string;
   description: string;
 }) => (
-  <div className="bg-white p-6 rounded-lg shadow-md text-center">
+  <div className="bg-white p-6 rounded-lg shadow-md text-center card">
     <div className="mb-4">{icon}</div>
     <h4 className="text-xl font-semibold text-indigo-700">{title}</h4>
     <p className="text-gray-600 mt-2">{description}</p>
