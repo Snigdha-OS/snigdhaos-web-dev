@@ -23,28 +23,27 @@ export function Home() {
 
           /* Adding gradient animation to the hero section */
           .hero-background {
-            background: linear-gradient(270deg, #4f46e5, #9333ea, #22d3ee); /* Gradient color from purple to blue */
-            background-size: 300% 300%; /* Makes the gradient larger for animation */
-            animation: gradientAnimation 15s ease infinite; /* Animates the gradient */
+            background: linear-gradient(270deg, #6495ed, #9333ea, #22d3ee); /* Updated with Cornflower Blue */
+            background-size: 300% 300%;
+            animation: gradientAnimation 15s ease infinite;
           }
 
           /* Card hover effect */
           .card:hover {
-            transform: scale(1.05); /* Slight zoom-in effect */
-            transition: transform 0.3s ease-in-out; /* Smooth transition */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Adding subtle shadow */
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
           }
         `}
       </style>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white py-20 relative overflow-hidden hero-background">
-        {/* Background Image */}
+      <section className="bg-gradient-to-r from-[#6495ed] to-indigo-700 text-white py-20 relative overflow-hidden hero-background">
         <div className="absolute inset-0 -z-10">
           <img
             src="https://via.placeholder.com/1920x1080" // Replace with your desired background image URL
             alt="Background"
-            className="w-full h-full object-cover opacity-30" // Ensures the image covers the entire section with low opacity
+            className="w-full h-full object-cover opacity-30"
           />
         </div>
 
@@ -56,33 +55,30 @@ export function Home() {
             Arch-based Linux Distribution for Penetration Testing and Ethical Hacking. Snigdha OS provides a powerful platform with the latest tools for cybersecurity professionals. 🔐💻
           </p>
           <div className="flex justify-center space-x-6 mt-6">
-            {/* Call-to-action button for downloading */}
             <Link
               to="/download"
-              className="bg-white text-indigo-700 px-8 py-4 rounded-[5px] font-semibold shadow-lg transform hover:scale-105 hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-3"
+              className="bg-white text-[#6495ed] px-8 py-4 rounded-[5px] font-semibold shadow-lg transform hover:scale-105 hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-3"
             >
               <Download className="h-5 w-5" />
               <span>Download Now 🚀</span>
             </Link>
 
-            {/* Call-to-action button for documentation */}
             <Link
               to="https://snigdha-os.github.io/documentation/"
-              className="border-2 border-white text-white px-8 py-4 rounded-[5px] font-semibold transform hover:scale-105 hover:bg-white hover:text-indigo-700 transition-all duration-300 inline-flex items-center space-x-3"
+              className="border-2 border-white text-white px-8 py-4 rounded-[5px] font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
             >
               <Book className="h-5 w-5" />
               <span>Documentation 📚</span>
             </Link>
           </div>
 
-          {/* Additional Call-to-Action */}
           <div className="mt-12 max-w-2xl mx-auto">
             <p className="text-lg text-white opacity-80 mb-4">
               Join a community of like-minded individuals dedicated to enhancing the security and safety of the digital world. 🌍🔧 Explore our open-source ecosystem and contribute to the next-gen tools.
             </p>
             <Link
               to="https://forum.snigdhaos.org/"
-              className="border-2 border-white text-white px-8 py-4 rounded-[5px] font-semibold transform hover:scale-105 hover:bg-white hover:text-indigo-700 transition-all duration-300 inline-flex items-center space-x-3"
+              className="border-2 border-white text-white px-8 py-4 rounded-[5px] font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
             >
               <Users className="h-5 w-5" />
               <span>Join The Community 🤝</span>
@@ -92,13 +88,12 @@ export function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16 bg-gradient-to-r from-indigo-50 to-white">
+      <section className="py-16 bg-gradient-to-r from-[#6495ed] to-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-indigo-700 mb-12 tracking-tight">
+          <h2 className="text-4xl font-bold text-center text-[#6495ed] mb-12 tracking-tight">
             Key Features ✨
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-            {/* Reusable feature card component */}
             <FeatureCard
               icon={<Shield className="h-10 w-10 text-red-500" />}
               title="Secure 🔒"
@@ -125,7 +120,7 @@ export function Home() {
               description="A vibrant community ready to help and share knowledge."
             />
             <FeatureCard
-              icon={<Star className="h-10 w-10 text-indigo-500" />}
+              icon={<Star className="h-10 w-10 text-[#6495ed]" />}
               title="Feature Rich ⚡"
               description="Pre-installed applications and tools for everyday use."
             />
@@ -150,81 +145,77 @@ export function Home() {
 
       {/* Latest Release Section */}
       <section className="py-16 bg-gradient-to-r from-indigo-100 to-indigo-200">
-  <div className="container mx-auto px-4">
-    <h2 className="text-4xl font-extrabold text-center mb-12 text-indigo-800">
-      🎉 Latest Release: <span className="text-indigo-600">Snigdha OS | Arctic V ❄️</span>
-    </h2>
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-extrabold text-center mb-12 text-[#6495ed]">
+            🎉 Latest Release: <span className="text-indigo-600">Snigdha OS | Arctic V ❄️</span>
+          </h2>
 
-    <div className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
-      {/* Image Section */}
-      <div className="md:w-1/2 mb-8 md:mb-0">
-        <img
-          src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
-          alt="Snigdha OS Desktop"
-          className="rounded-lg shadow-xl transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
-        />
-      </div>
+          <div className="bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row items-center transition-transform transform hover:scale-105 hover:shadow-2xl">
+            <div className="md:w-1/2 mb-8 md:mb-0">
+              <img
+                src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80"
+                alt="Snigdha OS Desktop"
+                className="rounded-lg shadow-xl transform transition duration-500 ease-in-out hover:scale-105 hover:shadow-2xl"
+              />
+            </div>
 
-      {/* Release Details Section */}
-      <div className="md:w-1/2 md:pl-8 p-8 space-y-6">
-        <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-          Snigdha OS | Arctic V brings performance enhancements, better hardware support, and a whole new visual refresh! Experience the best of both worlds: sleek design and robust functionality. 🚀
-        </p>
+            <div className="md:w-1/2 md:pl-8 p-8 space-y-6">
+              <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+                Snigdha OS | Arctic V brings performance enhancements, better hardware support, and a whole new visual refresh! Experience the best of both worlds: sleek design and robust functionality. 🚀
+              </p>
 
-        <div className="space-y-6">
-          {/* Key Features */}
-          <Feature
-            title="🌐 New GNOME 47.0"
-            description="A fresh, faster, and more intuitive GNOME experience that simplifies navigation with improved responsiveness."
-          />
-          <Feature
-            title="🛠️ Updated Software Manager"
-            description="Enjoy a cleaner, faster interface for package management with streamlined features."
-          />
-          <Feature
-            title="🔧 Improved Hardware Support"
-            description="Snigdha OS ensures seamless compatibility with modern devices and hardware configurations for a smooth experience."
-          />
-          <Feature
-            title="⚡ Upgraded Kernel & Drivers"
-            description="Experience better performance with the latest Linux 6.x Zen kernel and optimized drivers for your hardware."
-          />
-          <Feature
-            title="🔄 Timeshift Snapshots"
-            description="Create and manage system snapshots to restore your system whenever needed, ensuring peace of mind."
-          />
-          <Feature
-            title="🎨 New Theme Options"
-            description="Customize your desktop with a refreshed collection of themes and dark mode improvements for a more personalized look."
-          />
+              <div className="space-y-6">
+                <Feature
+                  title="🌐 New GNOME 47.0"
+                  description="A fresh, faster, and more intuitive GNOME experience that simplifies navigation with improved responsiveness."
+                />
+                <Feature
+                  title="🛠️ Updated Software Manager"
+                  description="Enjoy a cleaner, faster interface for package management with streamlined features."
+                />
+                <Feature
+                  title="🔧 Improved Hardware Support"
+                  description="Snigdha OS ensures seamless compatibility with modern devices and hardware configurations for a smooth experience."
+                />
+                <Feature
+                  title="⚡ Upgraded Kernel & Drivers"
+                  description="Experience better performance with the latest Linux 6.x Zen kernel and optimized drivers for your hardware."
+                />
+                <Feature
+                  title="🔄 Timeshift Snapshots"
+                  description="Create and manage system snapshots to restore your system whenever needed, ensuring peace of mind."
+                />
+                <Feature
+                  title="🎨 New Theme Options"
+                  description="Customize your desktop with a refreshed collection of themes and dark mode improvements for a more personalized look."
+                />
+              </div>
+
+              <div className="flex mt-8 justify-center space-x-6">
+                <Link
+                  to="/download"
+                  className="inline-flex items-center space-x-3 bg-[#6495ed] text-white px-8 py-4 rounded-xl shadow-lg hover:bg-indigo-700 transform transition-all duration-300 hover:scale-105"
+                >
+                  <Download className="h-5 w-5" />
+                  <span>Download Now 🚀</span>
+                </Link>
+                <Link
+                  to="/changelog"
+                  className="inline-flex items-center space-x-2 bg-gray-200 text-[#6495ed] px-6 py-2 rounded-xl shadow-lg hover:bg-gray-300 transform transition-all duration-300 hover:scale-105"
+                >
+                  <ArrowRight className="h-5 w-5" />
+                  <span>View Changelog 📜</span>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
-
-        {/* Buttons */}
-        <div className="flex mt-8 justify-center space-x-6">
-          <Link
-            to="/download"
-            className="inline-flex items-center space-x-3 bg-indigo-600 text-white px-8 py-4 rounded-xl shadow-lg hover:bg-indigo-700 transform transition-all duration-300 hover:scale-105"
-          >
-            <Download className="h-5 w-5" />
-            <span>Download Now 🚀</span>
-          </Link>
-          <Link
-            to="/changelog"
-            className="inline-flex items-center space-x-2 bg-gray-200 text-indigo-700 px-6 py-2 rounded-xl shadow-lg hover:bg-gray-300 transform transition-all duration-300 hover:scale-105"
-          >
-            <ArrowRight className="h-5 w-5" />
-            <span>View Changelog 📜</span>
-          </Link>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Why Choose Snigdha OS */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Why Choose Snigdha OS? 🤔</h2>
+          <h2 className="text-3xl font-bold text-center mb-12 text-[#6495ed]">Why Choose Snigdha OS? 🤔</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <ReasonCard
               icon={<Award className="h-10 w-10 text-yellow-500" />}
@@ -242,11 +233,10 @@ export function Home() {
               description="Built on Ubuntu's LTS base, Snigdha OS ensures long-term stability and security updates."
             />
             <ReasonCard
-              icon={<Star className="h-10 w-10 text-indigo-500" />}
+              icon={<Star className="h-10 w-10 text-[#6495ed]" />}
               title="Lightweight ⚡"
               description="With optimized performance, Snigdha OS works well on both older and newer hardware."
             />
-            {/* Extended reasons */}
             <ReasonCard
               icon={<Terminal className="h-10 w-10 text-green-500" />}
               title="Customizable 🖌️"
@@ -277,14 +267,14 @@ export function Home() {
 const FeatureCard = ({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) => (
   <div className="bg-white p-6 rounded-lg shadow-md text-center card">
     <div className="mb-4">{icon}</div>
-    <h4 className="text-xl font-semibold text-indigo-700">{title}</h4>
+    <h4 className="text-xl font-semibold text-[#6495ed]">{title}</h4>
     <p className="text-gray-600 mt-2">{description}</p>
   </div>
 );
 
 const Feature = ({ title, description }: { title: string; description: string }) => (
   <div>
-    <h4 className="text-lg font-semibold text-indigo-700">{title}</h4>
+    <h4 className="text-lg font-semibold text-[#6495ed]">{title}</h4>
     <p className="text-gray-600">{description}</p>
   </div>
 );
@@ -300,7 +290,7 @@ const ReasonCard = ({
 }) => (
   <div className="bg-white p-6 rounded-lg shadow-md text-center card">
     <div className="mb-4">{icon}</div>
-    <h4 className="text-xl font-semibold text-indigo-700">{title}</h4>
+    <h4 className="text-xl font-semibold text-[#6495ed]">{title}</h4>
     <p className="text-gray-600 mt-2">{description}</p>
   </div>
 );
