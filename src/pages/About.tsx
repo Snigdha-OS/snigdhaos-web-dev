@@ -21,9 +21,10 @@ export function About() {
         // List of GitHub usernames of the team members
         const teamUsernames = [
           "eshanized",
+          "d3v1l0n",
           "iconized",
           "alokified",
-          "utkrshift", // Replace with actual GitHub usernames
+          "utkrshift",
         ];
 
         // Fetch profile data for each member
