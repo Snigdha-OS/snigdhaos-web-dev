@@ -21,9 +21,9 @@ export function Home() {
             }
           }
 
-          /* Adding gradient animation to the hero section */
+          /* Black and #28282b gradient animation */
           .hero-background {
-            background: linear-gradient(270deg, #6495ed, #9333ea, #22d3ee); /* Updated with Cornflower Blue */
+            background: linear-gradient(270deg, #000000, #28282b, #000000); /* Black and Dark Gray Gradient */
             background-size: 300% 300%;
             animation: gradientAnimation 15s ease infinite;
           }
@@ -38,7 +38,7 @@ export function Home() {
       </style>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-[#6495ed] to-indigo-700 text-white py-20 relative overflow-hidden hero-background">
+      <section className="bg-gradient-to-r from-[#000000] to-[#6495ed] text-white py-20 relative overflow-hidden hero-background">
         <div className="absolute inset-0 -z-10">
           <img
             src="https://via.placeholder.com/1920x1080" // Replace with your desired background image URL
@@ -48,16 +48,19 @@ export function Home() {
         </div>
 
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-5xl font-extrabold mb-6 text-shadow-md">
-            Welcome to Snigdha OS 🌐
+          {/* Main Heading */}
+          <h1 className="text-5xl font-extrabold mb-6 text-shadow-md leading-tight">
+            Experience the Power 🔥
           </h1>
-          <p className="text-xl mb-8 max-w-3xl mx-auto text-shadow-lg">
-            Arch-based Linux Distribution for Penetration Testing and Ethical Hacking. Snigdha OS provides a powerful platform with the latest tools for cybersecurity professionals. 🔐💻
+          <p className="text-xl mb-8 max-w-3xl mx-auto text-shadow-lg text-justify">
+            Snigdha OS is a lightweight, Arch-based Linux distribution crafted for <strong>Penetration Testing 🛡️</strong>, <strong>Ethical Hacking 🔍</strong>, and general use. Power up your system with cutting-edge tools 🛠️ and enhanced security features 🔐💻.
           </p>
+
+          {/* Call to Action Buttons */}
           <div className="flex justify-center space-x-6 mt-6">
             <Link
               to="/download"
-              className="bg-white text-[#6495ed] px-8 py-4 rounded-[5px] font-semibold shadow-lg transform hover:scale-105 hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-3"
+              className="bg-white text-[#6495ed] px-8 py-4 rounded-lg font-semibold shadow-lg transform hover:scale-105 hover:bg-gray-100 transition-all duration-300 inline-flex items-center space-x-3"
             >
               <Download className="h-5 w-5" />
               <span>Download Now 🚀</span>
@@ -65,24 +68,29 @@ export function Home() {
 
             <Link
               to="https://snigdha-os.github.io/documentation/"
-              className="border-2 border-white text-white px-8 py-4 rounded-[5px] font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
+              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
             >
               <Book className="h-5 w-5" />
               <span>Documentation 📚</span>
             </Link>
           </div>
 
+          {/* Additional Information */}
           <div className="mt-12 max-w-2xl mx-auto">
-            <p className="text-lg text-white opacity-80 mb-4">
-              Join a community of like-minded individuals dedicated to enhancing the security and safety of the digital world. 🌍🔧 Explore our open-source ecosystem and contribute to the next-gen tools.
+            <p className="text-lg text-white opacity-80 mb-4 text-justify">
+              Join our thriving community of developers and cybersecurity professionals who are working together to build a safer digital world. 🌍🔧 Contribute to the project or simply enjoy the tools designed for your security needs.
             </p>
-            <Link
-              to="https://forum.snigdhaos.org/"
-              className="border-2 border-white text-white px-8 py-4 rounded-[5px] font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
-            >
-              <Users className="h-5 w-5" />
-              <span>Join The Community 🤝</span>
-            </Link>
+
+            {/* Call to Action Button */}
+            <div className="flex justify-center mt-6">
+              <Link
+                to="/community"
+                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
+              >
+                <Users className="h-5 w-5" />
+                <span>Join the Community 🤝</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
