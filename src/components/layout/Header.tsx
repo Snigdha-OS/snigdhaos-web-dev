@@ -18,14 +18,14 @@ export function Header() {
               alt="Snigdha OS"
               className="h-12 w-12 group-hover:scale-125 transition-transform duration-300"
             />
-            <span className="font-extrabold text-3xl tracking-wide text-indigo-400 group-hover:text-white transition-colors duration-300">
+            <span className="font-extrabold text-3xl tracking-wide text-[#6495ED] group-hover:text-white transition-colors duration-300">
               SNIGDHA OS
             </span>
           </Link>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-all focus:outline-none focus:ring-2 focus:ring-[#6495ED]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
@@ -60,6 +60,24 @@ export function Header() {
           )}
         </div>
       </div>
+
+      {/* Global Keyframe Animations (inline style tag) */}
+      <style>{`
+        @keyframes fade-in-down {
+          0% { opacity: 0; transform: translateY(-10px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fade-out-up {
+          0% { opacity: 1; transform: translateY(0); }
+          100% { opacity: 0; transform: translateY(-10px); }
+        }
+
+        @keyframes fade-in-up {
+          0% { opacity: 0; transform: translateY(10px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+      `}</style>
     </header>
   );
 }
@@ -81,15 +99,15 @@ function NavLinks({
           <li
             key={path}
             className={`${
-              animate ? 'animate-fade-in-up delay-' + idx * 100 : ''
+              animate ? `animate-fade-in-up delay-${idx * 100}` : ''
             }`}
           >
             <Link
               to={path}
               className={`${
                 isActive(path)
-                  ? 'text-indigo-500 underline underline-offset-4 decoration-2'
-                  : 'text-gray-300 hover:text-indigo-400'
+                  ? 'text-[#6495ED] underline underline-offset-4 decoration-2'
+                  : 'text-gray-300 hover:text-[#6495ED]'
               } font-medium transition-all duration-300 hover:scale-110`}
               onClick={closeMenu}
             >
