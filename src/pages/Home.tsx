@@ -23,10 +23,10 @@ export function Home() {
 
           /* Hero Section with updated background */
           .hero-background {
-            background: linear-gradient(135deg, #2e3b8c, #3b4c7a); /* New gradient */
-            background-size: 300% 300%;
-            animation: gradientAnimation 20s ease infinite;
-          }
+      background: linear-gradient(135deg, #2e3b8c, #6495ed, #ff7f50); /* Multi-color gradient */
+      background-size: 300% 300%; /* Enlarges the background to create smooth transitions */
+      animation: gradientAnimation 10s ease infinite; /* Infinite animation loop */
+    }
 
           /* New hover effect for feature cards */
           .card:hover {
