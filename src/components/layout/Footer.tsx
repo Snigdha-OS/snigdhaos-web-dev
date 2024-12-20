@@ -1,20 +1,33 @@
 import { useEffect, useState } from 'react';
-import { Github } from 'lucide-react';
+import { Github } from 'lucide-react'; // Importing the 'Github' icon from the 'lucide-react' library
 
+// Define and export the Footer functional component
 export function Footer() {
+  // Declare a state variable `githubFollowers` to store the number of GitHub followers.
+  // The initial value is set to `null`. The `setGithubFollowers` function is used to update this value.
   const [githubFollowers, setGithubFollowers] = useState<number | null>(null);
 
-  // Fetch GitHub follower count
+  // useEffect hook is used to run side effects. Here, it runs the effect to fetch GitHub follower count.
   useEffect(() => {
+    // Define an asynchronous function to fetch data from the GitHub API.
     async function fetchGithubFollowers() {
+      // Make a GET request to GitHub API for the user 'Snigdha-OS'.
       const response = await fetch('https://api.github.com/users/Snigdha-OS');
+      
+      // Parse the response JSON to extract the data.
       const data = await response.json();
+
+      // Check if the `followers` property exists in the fetched data.
       if (data.followers !== undefined) {
+        // Update the state with the number of followers.
         setGithubFollowers(data.followers);
       }
     }
+    
+    // Call the `fetchGithubFollowers` function to fetch the data.
     fetchGithubFollowers();
-  }, []);
+  }, []); // Empty dependency array means this effect runs only once after the component mounts.
+
 
   return (
     <footer className="relative bg-[#1a202c] text-white py-16 overflow-hidden">
