@@ -44,31 +44,65 @@ export function Home() {
 
           /* New feature card style */
           .feature-card {
-            border: 2px solid transparent;
-            background: #f7f8fb;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-          }
+  border: 2px solid transparent;
+  background: linear-gradient(145deg, #ffffff, #f0f4f8); /* Light gradient background */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(100, 149, 237, 0.2); /* Double-layered shadow */
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1), 
+              box-shadow 0.4s cubic-bezier(0.19, 1, 0.22, 1),
+              border 0.3s ease;
+  position: relative;
+  overflow: hidden; /* Hide decorative elements */
+}
 
-          .feature-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.2);
-            border-color: #6495ed;
-          }
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(100, 149, 237, 0.2), rgba(0, 0, 0, 0));
+  transform: scale(0);
+  transition: transform 0.4s ease-in-out;
+  z-index: 0;
+}
 
-          /* Feature card content style */
-          .feature-card h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #6495ed;
-          }
+.feature-card:hover::before {
+  transform: scale(1);
+}
 
-          .feature-card p {
-            font-size: 1rem;
-            color: #333333;
-          }
+.feature-card:hover {
+  transform: translateY(-10px) scale(1.05); /* Slight lift effect */
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15), 0 8px 20px rgba(100, 149, 237, 0.3); /* Enhanced shadow */
+  border-color: #6495ed; /* Highlight border */
+}
+
+.feature-card h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6495ed; /* Accent color */
+  margin-bottom: 10px;
+  z-index: 1;
+  position: relative;
+}
+
+.feature-card p {
+  font-size: 1rem;
+  color: #333333;
+  z-index: 1;
+  position: relative;
+}
+
+.feature-card:hover h4 {
+  color: #1e90ff; /* Subtle color shift on hover */
+}
+
+.feature-card:hover p {
+  color: #555555; /* Slightly darker text */
+}
+
 
           /* New list style for features */
           .feature-list {
@@ -82,47 +116,56 @@ export function Home() {
 
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-[#000000] to-[#6495ed] text-white py-20 relative overflow-hidden hero-background">
-        <div className="absolute inset-0 -z-10">
-          <img
-            src="https://via.placeholder.com/1920x1080" // Replace with your desired background image URL
-            alt="Background"
-            className="w-full h-full object-cover opacity-30"
-          />
-        </div>
+  <div className="absolute inset-0 -z-10">
+    <img
+      src="https://via.placeholder.com/1920x1080" // Replace with your desired background image URL
+      alt="Background"
+      className="w-full h-full object-cover opacity-30"
+    />
+  </div>
 
-        <div className="container mx-auto px-4 text-center relative z-10">
-          {/* Main Heading */}
-          <h1 className="text-5xl font-extrabold mb-6 text-shadow-md leading-tight hero-heading">
-            EXPERIENCE THE POWER OF
-          </h1>
-          <h1 className="text-5xl font-extrabold mb-6 text-shadow-md leading-tight hero-heading transform hover:text-white transition-all duration-300">
-            SNIGDHA OS 🔥
-          </h1>
+  <div className="container mx-auto px-4 text-center relative z-10">
+    {/* Main Heading */}
+    <h1 className="text-5xl font-extrabold mb-6 text-shadow-md leading-tight hero-heading">
+      EXPERIENCE THE POWER OF
+    </h1>
+    <h1 className="text-5xl font-extrabold mb-6 text-shadow-md leading-tight hero-heading transform hover:text-white transition-all duration-300">
+      SNIGDHA OS 🔥
+    </h1>
 
-          <p className="text-xl mb-8 max-w-3xl mx-auto text-shadow-lg text-justify">
-            Snigdha OS is a lightweight, Arch-based Linux distribution crafted for <strong>Penetration Testing 🛡️</strong>, <strong>Ethical Hacking 🔍</strong>, and general use. Power up your system with cutting-edge tools 🛠️ and enhanced security features 🔐💻.
-          </p>
+    <p className="text-xl mb-8 max-w-3xl mx-auto text-shadow-lg text-justify">
+      Snigdha OS is a lightweight, Arch-based Linux distribution crafted for <strong>Penetration Testing 🛡️</strong>, <strong>Ethical Hacking 🔍</strong>, and general use. Power up your system with cutting-edge tools 🛠️ and enhanced security features 🔐💻.
+    </p>
 
-          {/* Call to Action Buttons */}
-          <div className="flex justify-center space-x-6 mt-6">
-            <Link
-              to="/download"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
-            >
-              <Download className="h-5 w-5" />
-              <span>Download Now 🚀</span>
-            </Link>
+    {/* Call to Action Buttons */}
+    <div className="flex flex-wrap justify-center space-x-6 mt-6">
+      <Link
+        to="/download"
+        className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
+      >
+        <Download className="h-5 w-5" />
+        <span>Download Now 🚀</span>
+      </Link>
 
-            <Link
-              to="https://snigdha-os.github.io/documentation/"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
-            >
-              <Book className="h-5 w-5" />
-              <span>Documentation 📚</span>
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Link
+        to="https://snigdha-os.github.io/documentation/"
+        className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
+      >
+        <Book className="h-5 w-5" />
+        <span>Documentation 📚</span>
+      </Link>
+
+      <Link
+        to="https://forum.snigdha-os.org" // Replace with your community forum URL
+        className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transform hover:scale-105 hover:bg-white hover:text-[#6495ed] transition-all duration-300 inline-flex items-center space-x-3"
+      >
+        <Users className="h-5 w-5" />
+        <span>Community Forum 🌐</span>
+      </Link>
+    </div>
+  </div>
+</section>
+
 
       {/* Features Section */}
       <section className="py-16 bg-gradient-to-r from-[#f0f4f8] to-[#ffffff]">
